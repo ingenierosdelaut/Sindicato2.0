@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Descarga extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'usuario_id'
+    ];
 }

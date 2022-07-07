@@ -26,7 +26,7 @@ class RequestCreate extends Component
     {
         $requests = Request::where('id_usuario', auth()->user()->id)->paginate(5);
         $usuarios = Usuario::all();
-        return view('livewire.requests.requests-create', compact('usuarios', 'requests'));
+        return view('livewire.requests.requests-create', compact('usuarios', 'requests'))->layout('layouts.app-user')->slot('slotUser');
     }
 
     public function crear()

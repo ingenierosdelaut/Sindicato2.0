@@ -1,13 +1,13 @@
-<div class="container">
+<div>
 
     <head>
         <link rel="stylesheet" href="{{ asset('static/css/inputs.css') }}">
     </head>
-    <form class="form">
-        <div class="row g-3">
+    <form action="">
+        <div class="row g-2">
             <div class="col">
                 <label style="color: black" for="">Nombre</label>
-                <input class="form-control" wire:model="usuario.nombre" type="text" placeholder="Nombre">
+                <input class="form-control" wire:model="usuario.nombre" type="text" placeholder="Nombre" disabled>
                 @error('usuario.nombre')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -15,7 +15,8 @@
 
             <div class="col">
                 <label style="color: black" for="">Apellidos</label>
-                <input class="form-control" wire:model="usuario.apellido" placeholder="Apellido" type="text">
+                <input class="form-control" wire:model="usuario.apellido" placeholder="Apellido" type="text"
+                    disabled>
                 @error('usuario.apellido')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -35,7 +36,7 @@
         <div class="row g-2 mt-2">
             <div class="col">
                 <label style="color: black" for="">Departamento</label>
-                <select wire:model="usuario.departamento" type="button" name="departamento">
+                <select style="color: black" wire:model="usuario.departamento" type="button" name="departamento" disabled>
                     <option>Departamento</option>
                     <option value="Tecnologias de la información">Tecnologias de la infomación</option>
                     <option value="Operaciones comerciales">Operaciones comerciales internacionales</option>
@@ -49,7 +50,7 @@
 
             <div class="col">
                 <label style="color: black" for="">Puesto</label>
-                <select wire:model="usuario.puesto" type="button" name="puesto">
+                <select style="color: black" wire:model="usuario.puesto" type="button" name="puesto" disabled>
                     <option>Puesto</option>
                     <option value="Administrativo">Administrativo</option>
                     <option value="Docente">Docente</option>
@@ -64,7 +65,7 @@
             <div class="col">
                 <label style="color: black" for="">Telefono</label>
                 <input class="form-control" wire:model="usuario.telefono" type="text" class="form-control"
-                    placeholder="Telefono, Ejemplo: 6531506589">
+                    placeholder="Telefono, Ejemplo: 6531506589" disabled>
                 @error('usuario.telefono')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -72,7 +73,7 @@
             <div class="col">
                 <label style="color: black" for="">CURP</label>
                 <input class="form-control" wire:model="usuario.curp" type="text" class="form-control"
-                    placeholder=" CURP, Ejemplo: MAAA991217HSRRML06">
+                    placeholder=" CURP, Ejemplo: MAAA991217HSRRML06" disabled>
                 @error('usuario.curp')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -81,7 +82,7 @@
             <div class="col">
                 <label style="color: black" for="">RFC</label>
                 <input class="form-control" wire:model="usuario.rfc" type="text" class="form-control"
-                    placeholder="RFC, Ejemplo: MAAA991217HSRRML06">
+                    placeholder="RFC, Ejemplo: MAAA991217HSRRML06" disabled>
                 @error('usuario.rfc')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -92,7 +93,7 @@
             <div class="col">
                 <label style="color: black" for="">Clave de Elector</label>
                 <input class="form-control" wire:model="usuario.ine" type="text" class="form-control"
-                    placeholder="INE(Codigo)">
+                    placeholder="INE(Codigo)" disabled>
                 @error('usuario.ine')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -101,7 +102,7 @@
             <div class="col">
                 <label style="color: black" for="">Fecha de Ingreso</label>
                 <input class="form-control" wire:model="usuario.fecha_ingreso" type="date" class="form-control"
-                    placeholder=" Fecha de Ingreso Ejemplo: 05/05/2020">
+                    placeholder=" Fecha de Ingreso Ejemplo: 05/05/2020" disabled>
                 @error('usuario.fecha_ingreso')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -109,27 +110,30 @@
 
             <div class="col">
                 <label style="color: black" for="">Fecha de Afiliación</label>
-                <input class="form-control" wire:model="usuario.fecha_afiliacion" type="date"
-                    class="form-control" placeholder=" Fecha de Afiliacion Ejemplo: 20/05/2020">
+                <input class="form-control" wire:model="usuario.fecha_afiliacion" type="date" class="form-control"
+                    placeholder=" Fecha de Afiliacion Ejemplo: 20/05/2020" disabled>
                 @error('usuario.fecha_afiliacion')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
         </div>
+        <div class="row mt-3 g-2">
 
-        <div class="row mt-2">
-            <div class="col-3">
-                <label style="color: black" for="">Restablecer contraseña</label>
-                <div style="color: black" class="form-check mb-3">
-                    <label class="form-check-label">
-                        <input wire:model="password" class="form-check-input" value="sindicatout" type="checkbox"
-                            name="remember"> Restablecer contraseña
-                    </label>
-                </div>
+            <div class="col">
+                <input class="relieve" wire:model="password" type="password" placeholder="Contraseña"
+                    class="form-control">
+                @error('password')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div class="col">
+                <input class="relieve" wire:model="confirm_password" type="password" placeholder="Confirmar Contraseña"
+                    class="form-control">
+                @error('confirm_password')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
         </div>
     </form>
-
-
-
 </div>

@@ -20,7 +20,7 @@ class AnuncioEdit extends Component
 
     public function render()
     {
-        return view('livewire.admin.anuncio-edit');
+        return view('livewire.admin.anuncio-edit')->layout('layouts.app-admin')->slot('slotAdmin');
     }
 
     public function editarAnuncio()

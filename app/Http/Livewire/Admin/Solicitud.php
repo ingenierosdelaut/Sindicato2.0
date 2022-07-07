@@ -34,7 +34,7 @@ class Solicitud extends Component
             )
             ->orderby('estado', 'asc')
             ->paginate(10);
-        return view('livewire.admin.solicitud', compact('requests'));
+        return view('livewire.admin.solicitud', compact('requests'))->layout('layouts.app-admin')->slot('slotAdmin');
     }
 
     public function aceptar($id)
@@ -49,7 +49,7 @@ class Solicitud extends Component
 
     public function motivo($id)
     {
-        $data=$this->validate();
+        $this->validate();
         Request::find($id)->fill(['estado' => 2,'motivo'=>$this->request['motivo']])->save();
         $this->emit('alert-request-denied', 'Se ha enviando el motivo por el cual se denego solicitud');
 

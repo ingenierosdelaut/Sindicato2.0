@@ -27,7 +27,7 @@ class UsuarioIndex extends Component
             ->orwhere('apellido', 'LIKE', '%' . $this->search . '%')
             ->orwhere('estado', 'LIKE', '%' . $this->search . '%')
             ->paginate(10) : [];
-        return view('livewire.admin.usuario-index', compact('usuarios'));
+        return view('livewire.admin.usuario-index', compact('usuarios'))->layout('layouts.app-admin')->slot('slotAdmin');
     }
 
     public function generarPDF()

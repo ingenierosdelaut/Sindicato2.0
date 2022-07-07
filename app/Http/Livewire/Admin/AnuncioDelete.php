@@ -11,7 +11,7 @@ class AnuncioDelete extends Component
 {
     public function render()
     {
-        return view('livewire.admin.anuncio-delete');
+        return view('livewire.admin.anuncio-delete')->layout('layouts.app-admin')->slot('slotAdmin');
     }
 
     use WithFileUploads;

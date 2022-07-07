@@ -17,6 +17,7 @@ class CreateDocumentosTable extends Migration
             $table->id();
             $table->string('url_doc');
             $table->string('titulo');
+            $table->integer('estado');
             $table->timestamps();
         });
     }

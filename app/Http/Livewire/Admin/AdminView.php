@@ -37,7 +37,7 @@ class AdminView extends Component
         // foreach ($requests as $request) {
         //     echo $request->estado_count;
         // }
-        return view('livewire.admin.admin-view', compact('anuncios', 'requests'));
+        return view('livewire.admin.admin-view', compact('anuncios', 'requests'))->layout('layouts.app-admin')->slot('slotAdmin');
     }
 
     public function cargando()

@@ -12,6 +12,7 @@ use App\Http\Livewire\Admin\Solicitud;
 use App\Http\Livewire\Admin\UsuarioCreate;
 use App\Http\Livewire\Admin\UsuarioIndex;
 use App\Http\Livewire\Admin\UsuariosEdit;
+use App\Http\Livewire\Admin\UsuariosEditPassword;
 use App\Http\Livewire\Admin\UsuarioShow;
 use App\Http\Livewire\Anuncios\AnunciosIndex;
 use App\Http\Livewire\Conocenos\Mision;
@@ -23,6 +24,7 @@ use App\Http\Livewire\Index;
 use App\Http\Livewire\IniciarSesion\Login;
 use App\Http\Livewire\Requests\RequestCreate;
 use App\Http\Livewire\Requests\RequestDelete;
+use App\Http\Livewire\Requests\RequestEdit;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,12 +82,13 @@ Route::group(['middleware' => 'auth'], function () {
     //requests usuarios
 
     Route::get('/usuario/solicitud', RequestCreate::class)->name('requests.create');
-    Route::get('/usuario/solicitud/{request}/delete', RequestDelete::class)->name('requests.delete');
+    Route::get('/usuario/solicitud/{request}/delete', RequestEdit::class)->name('requests.delete');
 
     //Anuncios usuarios
     Route::get('/usuario/anuncios', AnunciosIndex::class)->name('anuncios.index');
 
     //Documentos Usuarios
     Route::get('/usuario/documentos', DocumentosIndex::class)->name('documentos.index');
+    Route::get('/usuario/{usuario}/editar-password', UsuariosEditPassword::class)->name('usuario.edit-pwd');
 
 });

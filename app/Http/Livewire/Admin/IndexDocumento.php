@@ -4,7 +4,9 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Documento;
 use App\Models\Request;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Livewire\WithPagination;
 
 class IndexDocumento extends Component
@@ -14,26 +16,27 @@ class IndexDocumento extends Component
         $this->documento = new Documento();
     }
 
-    public Documento $documento;
+
     public $cargado = false;
-    use WithPagination;
     protected $paginationTheme = 'bootstrap';
+    use WithPagination;
+    use WithFileUploads;
     public $search;
+    public $url_doc;
 
     public function render()
     {
-        // $documentos = ($this->cargado == true) ? Documento::where('titulo', 'LIKE', '%' . $this->search . '%')
-        //     ->paginate(10) : [];
         $documentos = Documento::paginate(5);
-        return view('livewire.admin.index-documento', compact('documentos'));
+        return view('livewire.admin.index-documento', compact('documentos'))->layout('layouts.app-admin')->slot('slotAdmin');
     }
 
-    public function delete(Documento $documento)
+    public function desactivar($id)
     {
-        $documento->delete();
-        $this->emit('alert-documento-delete', 'Has eliminado el documento correctamente');
-        return redirect(route('admin.documentos-index'));
+        Storage::disk('public')->delete($this->documento->url_doc);
+        Documento::find($id)->fill(['estado' => 0])->save();
+        $this->emit('alert-documento-desactivar', 'Has desactivado el documento correctamente');
     }
+
 
     public function fileUpload(Request $req)
     {

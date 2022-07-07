@@ -9,9 +9,8 @@ class UsuarioShow extends Component
 {
     public Usuario $usuario;
 
-    
     public function render()
     {
-        return view('livewire.admin.usuario-show');
+        return view('livewire.admin.usuario-show')->layout('layouts.app-admin')->slot('slotAdmin');
     }
 }

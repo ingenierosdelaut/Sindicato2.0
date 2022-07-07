@@ -1,29 +1,8 @@
 <div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ route('anuncios.index') }}">
-            <img src="{{ asset('static/images/sututslrc.png') }}" width="50" height="50" alt="logo">
-        </a>
-        <h6 style="margin: 5px" href="{{ route('anuncios.index') }}"><span style="color:#177c67">SUTUT</span><span
-                style="color:grey">SLRC</span></h6>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{{ route('requests.create') }}">Solicitud</a>
-                <a class="nav-item nav-link" href="{{ route('documentos.index') }}">Documentos</a>
-                <div style="margin-left: 975px;">
-                    @livewire('iniciar-sesion.logout')
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
+    <div class="mt-2">
         <form wire:submit.prevent="crear">
-            <div class="card request mx-auto w-50 mt-3">
+            <div class="card request mx-auto w-50">
                 <h5 class="card-header text-center">
                     Solicitud Día Económico
                 </h5>
@@ -31,25 +10,26 @@
                     @include('livewire.requests.formulario')
                 </div>
                 <div class="card-footer text-center">
-                    <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+                    <button type="submit" style="background-color: #0c8461"
+                        class="btn btn-success btn-sm">Guardar</button>
                 </div>
             </div>
         </form>
     </div>
 
-
     <div class="container">
         @if (count((array) $requests))
-            <div>
+            <div class="div">
                 <h2>Mis solicitudes realizadas</h2>
             </div>
-            <table class="table text-center">
+            <table class="table table-striped text-center">
                 <thead class="table-dark">
                     <tr>
                         <td scope="col">ID</td>
                         <td scope="col">Fecha Solicitada</td>
                         <td scope="col">Dia en que se solicitó</td>
                         <td scope="col">Estado</td>
+                        <td scope="col">Motivo</td>
                         <td>Opciones</td>
                     </tr>
                 </thead>
@@ -62,16 +42,24 @@
                             <th scope="row">{{ ++$i }}</th>
                             <td>{{ $request->fecha }}</td>
                             <td>{{ $request->created_at }}</td>
-                            @if ($request->estado == null)
+                            @if ($request->estado == 0)
                                 <td><span class="badge badge-pill badge-warning">Pendiente</span></td>
                             @elseif ($request->estado == 1)
-                                <td><span class="badge badge-pill badge-success">Acceptada</span></td>
+                                <td><span style="background-color: #0c8461"
+                                        class="badge badge-pill badge-success">Aceptada</span></td>
                             @else
-                                <td><span class="badge badge-pill badge-warning">Denegada</span></td>
+                                <td><span class="badge badge-pill badge-danger">Denegada</span></td>
                             @endif
                             <td>
-                                <a href="{{ route('requests.delete', $request) }}" title="Eliminar Solicitud"
-                                    class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash"></i></a>
+                                {{ $request->motivo }}
+                            </td>
+                            <td>
+                                @if ($request->estado == 0)
+                                    <a href="{{ route('requests.delete', $request) }}" title="Eliminar Solicitud"
+                                        class="btn btn-primary btn-sm" type="button"><i class="fa fa-edit"></i></a>
+                                @elseif ($request->estado == 1 || $request->estado == 2)
+                                    La solicitud ya no se puede modificar.
+                                @endif
                             </td>
                         </tr>
                     @endforeach
@@ -83,5 +71,10 @@
             {{ $requests->links() }}
         </div>
     </div>
+
+</div>
+
+
+
 
 </div>

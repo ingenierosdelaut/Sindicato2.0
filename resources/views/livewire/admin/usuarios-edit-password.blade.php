@@ -20,16 +20,21 @@
         </div>
     </nav>
 
-    <div class="mx-auto card text-center" style="width: 18rem; margin-top: 75px;">
-        <div class="card-header">
-            <h5 class="card-title">¿Esta seguro de eliminar la solicitud?</h5>
-        </div>
-        <div class="card-body">
-            <p class="card-text">Fecha: {{ $request->fecha }}</p>
-        </div>
-        <div class="card-header">
-            <button wire:click="delete" class="btn btn-success btn-sm">Confirmar</button>
-            <a href="{{ route('requests.create') }}" class="btn btn-danger btn-sm">Cancelar</a>
-        </div>
+    <div class="container mt-3">
+        <form wire:submit.prevent="editpwd">
+            <div class="card">
+                <h5 class="card-header text-center">
+                    Información del usuario
+                </h5>
+                <h5 class="container">En este apartado podras visualizar tus datos personales, y solo podras modificar tu contraseña en caso de ser necesario. Si tu información esta incorrecta comunicate con el administrador de la página.</h5>
+                <div class="card-body ">
+                    @include('livewire.admin.formulario-pwd')
+                </div>
+                <div class="card-footer text-center">
+                    <button type="submit" style="background-color: #0c8461" class="btn btn-success btn-sm">Guardar</button>
+                </div>
+            </div>
+        </form>
     </div>
+
 </div>

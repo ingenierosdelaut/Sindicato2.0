@@ -3,49 +3,50 @@
     <form class="form">
         <div class="row g-2">
             <div class="col">
-                <input class="form-control" type="text" style="color: black" wire:model="usuario.nombre" placeholder="Nombre">
+                <input class="form-control" type="text" style="color: black" wire:model="usuario.nombre"
+                    placeholder="Nombre">
                 @error('usuario.nombre')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
 
             <div class="col">
-                <input class="form-control" style="color: black" wire:model="usuario.apellido" placeholder="Apellido" type="text">
+                <input class="form-control" style="color: black" wire:model="usuario.apellido" placeholder="Apellido"
+                    type="text">
                 @error('usuario.apellido')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
 
-        </div> <br>
+        </div>
 
-        <div class="row">
+        <div class="row mt-2">
             <div class="col-6">
-                <input class="form-control" style="color: black" wire:model="usuario.email" placeholder="Ejemplo@hotmail.com" type="text"
-                    placeholder="Correo: ejemplo@hotmail.com">
+                <input class="form-control" style="color: black" wire:model="usuario.email"
+                    placeholder="Ejemplo@hotmail.com" type="text" placeholder="Correo: ejemplo@hotmail.com">
                 @error('usuario.email')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
-        </div> <br>
+        </div>
 
-        <div class="row g-2">
-            <div class="col">
-                <input class="form-control" style="color: black" wire:model="password" type="password" placeholder="Contraseña">
-                @error('password')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
+        <div class="row mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col">
+                        <label style="color: black" for="">Establecer contraseña por defecto</label>
+                        <div style="color: black" class="form-check mb-3">
+                            <label class="form-check-label">
+                                <input wire:model="password" class="form-check-input" value="sindicatout"
+                                    type="checkbox" checked="checked"> Restablecer contraseña
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="col">
-                <input class="form-control" style="color: black" wire:model="confirm_password" type="password"
-                    placeholder="Confirmar Contraseña">
-                @error('confirm_password')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
-            </div>
-        </div> <br>
-
-        <div class="row g-2">
+        <div class="row g-2 mt-2">
             <div class="col">
                 {{-- <input class="form-control" style="color: black" wire:model="usuario.departamento" type="text" placeholder="Departamento"
                     > --}}
@@ -85,9 +86,9 @@
 
 
             </div>
-        </div> <br>
+        </div>
 
-        <div class="row g-3">
+        <div class="row g-3 mt-2">
             <div class="col">
                 <input class="form-control" style="color: black" wire:model="usuario.telefono" type="text"
                     placeholder="Teléfono, Ejemplo: 6531506589">
@@ -96,34 +97,34 @@
                 @enderror
             </div>
             <div class="col">
-                <input class="form-control" wire:model="usuario.curp" type="text" style="color: black; text-transform:uppercase;"
-                    placeholder=" CURP, Ejemplo: MAAA991217HSRRML06">
+                <input class="form-control" wire:model="usuario.curp" type="text"
+                    style="color: black; text-transform:uppercase;" placeholder=" CURP, Ejemplo: MAAA991217HSRRML06">
                 @error('usuario.curp')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
 
             <div class="col">
-                <input class="form-control" wire:model="usuario.rfc" type="text" style="color: black; text-transform:uppercase;"
-                    placeholder="RFC, Ejemplo: MAAA991217HSRRML06">
+                <input class="form-control" wire:model="usuario.rfc" type="text"
+                    style="color: black; text-transform:uppercase;" placeholder="RFC, Ejemplo: MAAA991217HSRRML06">
                 @error('usuario.rfc')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
-        </div> <br>
+        </div>
 
-        <div class="row g-3">
+        <div class="row g-3 mt-2">
             <div class="col">
-                <input class="form-control" wire:model="usuario.ine" type="text" style="color: black; text-transform:uppercase;"
-                    placeholder="Clave de Elector">
+                <input class="form-control" wire:model="usuario.ine" type="text"
+                    style="color: black; text-transform:uppercase;" placeholder="Clave de Elector">
                 @error('usuario.ine')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
 
             <div class="col">
-                <input class="form-control" style="color: black" wire:model="usuario.fecha_ingreso" type="date" class="textbox-n"
-                    onblur="(this.type='text')" onfocus="(this.type='date')"
+                <input class="form-control" style="color: black" wire:model="usuario.fecha_ingreso" type="date"
+                    class="textbox-n" onblur="(this.type='text')" onfocus="(this.type='date')"
                     placeholder=" Fecha de Ingreso Ejemplo: 05/05/2020" id="date">
                 @error('usuario.fecha_ingreso')
                     <span class="text-danger">{{ $message }}</span>
@@ -131,8 +132,8 @@
             </div>
 
             <div class="col">
-                <input class="form-control" style="color: black" wire:model="usuario.fecha_afiliacion" type="date"
-                    placeholder="Fecha de Afiliación, Ejemplo: 20/05/2020" class="textbox-n"
+                <input class="form-control" style="color: black" wire:model="usuario.fecha_afiliacion"
+                    type="date" placeholder="Fecha de Afiliación, Ejemplo: 20/05/2020" class="textbox-n"
                     onfocus="(this.type='date')" onblur="(this.type='text')">
                 @error('usuario.fecha_afiliacion')
                     <span class="text-danger">{{ $message }}</span>

@@ -10,7 +10,6 @@ use Livewire\WithFileUploads;
 class UsuariosEdit extends Component
 {
 
-
     use WithFileUploads;
     public Usuario $usuario;
     public $confirm_password;
@@ -22,7 +21,7 @@ class UsuariosEdit extends Component
     public function render()
     {
 
-        return view('livewire.admin.usuarios-edit');
+        return view('livewire.admin.usuarios-edit')->layout('layouts.app-admin')->slot('slotAdmin');
     }
 
 

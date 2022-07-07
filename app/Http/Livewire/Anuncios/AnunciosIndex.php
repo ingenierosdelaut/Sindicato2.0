@@ -23,6 +23,6 @@ class AnunciosIndex extends Component
                 'anuncios.*',
                 'usuarios.nombre'
             )->latest()->paginate(10);
-        return view('livewire.anuncios.anuncios-index', compact('anuncios'));
+        return view('livewire.anuncios.anuncios-index', compact('anuncios'))->layout('layouts.app-user')->slot('slotUser');
     }
 }

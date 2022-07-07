@@ -29,7 +29,7 @@ class UsuarioCreate extends Component
 
     public function render()
     {
-        return view('livewire.admin.usuario-create');
+        return view('livewire.admin.usuario-create')->layout('layouts.app-admin')->slot('slotAdmin');
     }
 
 

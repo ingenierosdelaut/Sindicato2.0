@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-6 col-12-narrower">
                     <section class="box special">
-                        <span class="image featured"><img class="imagen1"
+                        <span class="image featured"><img class="imagen1 img-fluid"
                                 src="{{ asset('static\images\instalacion.jpg') }}"
                                 alt=""height="286 px" /></span>
                         <h3>Objetivo</h3>
@@ -63,7 +63,7 @@
 
                 <div class="col-6 col-12-narrower">
                     <section class="box special">
-                        <span class="image featured"><img class="imagen2"
+                        <span class="image featured"><img class="imagen2 img-fluid"
                                 src="{{ asset('static\images\event.jpg') }}" alt="" height="286 px" /></span>
                         <h3>Instalaciones</h3>
                         <p class="text-center">El domicilio social del Sindicato se encuentra ubicado por la Avenida
@@ -76,7 +76,7 @@
                 </div>
                 <div class="col-6 col-12-narrower">
                     <section class="box special">
-                        <span class="image featured"><img class="imagen3" src="{{ asset('static\images\UT.png') }}"
+                        <span class="image featured"><img class="imagen3 img-fluid" src="{{ asset('static\images\UT.png') }}"
                                 alt="" height="286 px" /></span>
                         <h3>Forma parte del sindicato</h3>
                         <p class="text-center">A. Llena la solicitud de ingreso, proporcionando los datos que se pidan
@@ -90,7 +90,7 @@
 
                 <div class="col-6 col-12-narrower">
                     <section class="box special">
-                        <span class="image featured"><img class="imagen4"
+                        <span class="image featured"><img class="imagen4 img-fluid"
                                 src="{{ asset('static\images\UTSLRC.jfif') }}" alt=""
                                 height="286 px" /></span>
                         <h3>Elecciones</h3>

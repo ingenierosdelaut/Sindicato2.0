@@ -30,7 +30,7 @@ class AnuncioCreate extends Component
         //     ->select(
         //         'usuarios.*',
         //     )->latest()->paginate(5);
-        return view('livewire.admin.anuncio-create', compact('anuncios'));
+        return view('livewire.admin.anuncio-create', compact('anuncios'))->layout('layouts.app-admin')->slot('slotAdmin');
     }
 
     public function crearAnuncio()
