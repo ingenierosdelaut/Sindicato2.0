@@ -5,7 +5,9 @@ use App\Http\Livewire\Admin\AnuncioCreate;
 use App\Http\Livewire\Admin\AnuncioDelete;
 use App\Http\Livewire\Admin\AnuncioEdit;
 use App\Http\Livewire\Admin\AnuncioIndex;
+use App\Http\Livewire\Admin\AppUser;
 use App\Http\Livewire\Admin\Denegado;
+use App\Http\Livewire\Admin\DescargasIndex;
 use App\Http\Livewire\Admin\DocumentoUpload;
 use App\Http\Livewire\Admin\IndexDocumento;
 use App\Http\Livewire\Admin\Solicitud;
@@ -74,7 +76,10 @@ Route::group(['middleware' => 'auth'], function () {
     //Admin documentos
     Route::get('/admin/documentos-upload', DocumentoUpload::class)->name('admin.documento-create')->middleware('auth.admin');
     Route::post('/admin/documentos-upload', [DocumentoUpload::class, 'fileUpload'])->name('fileUpload')->middleware('auth.admin');
-    Route::get('/admin/documentos/index', IndexDocumento::class)->name('admin.documentos-index')->middleware('auth.admin') ;
+    Route::get('/admin/documentos/index', IndexDocumento::class)->name('admin.documentos-index')->middleware('auth.admin');
+
+    //Admin descargas
+    Route::get('/admin/descargas', DescargasIndex::class)->name('admin.descargas')->middleware('auth.admin');
 
     //Admin Solicitudes
     Route::get('/admin/solicitudes', Solicitud::class)->name('admin.solicitudes')->middleware('auth.admin');
@@ -90,5 +95,4 @@ Route::group(['middleware' => 'auth'], function () {
     //Documentos Usuarios
     Route::get('/usuario/documentos', DocumentosIndex::class)->name('documentos.index');
     Route::get('/usuario/{usuario}/editar-password', UsuariosEditPassword::class)->name('usuario.edit-pwd');
-
 });

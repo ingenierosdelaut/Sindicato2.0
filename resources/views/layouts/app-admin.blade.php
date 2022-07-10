@@ -6,16 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <!-- CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-
     <link rel="icon" href="{{ asset('static/images/sututslrc.png') }}">
     <link rel="stylesheet" href="{{ asset('static/css/style.css') }}">
 
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-    <!-- JavaScript Bundle with Popper -->
+    <!-- Icono sidebar responsive -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Iconos sidebar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
     @livewireStyles
@@ -25,11 +21,12 @@
 
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
+
             <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" style="color: #0c8461" class="btn btn-primary"><i
-                        class="fa fa-arrow"></i>
+                <button type="button" id="sidebarCollapse" style="color: #0c8461" class="btn btn-primary">
                 </button>
             </div>
+
             <div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
                 <div class="user-logo">
                     <img class="img-fluid" src="{{ asset('static/images/sututslrc.png') }}" width="150"
@@ -51,6 +48,9 @@
                     <a href="{{ route('admin.solicitudes') }}"><span class="fa fa-tags mr-3"></span> Solicitudes</a>
                 </li>
                 <li>
+                    <a href="{{ route('admin.descargas') }}"><span class="fa fa-download mr-3"></span> Descargas</a>
+                </li>
+                <li>
                     <a href="{{ route('admin.documentos-index') }}"><span class="fa fa-file mr-3"></span>
                         Documentos</a>
                 </li>
@@ -65,6 +65,9 @@
 
 
         <div id="content" class="p-4 p-md-5 pt-5">
+
+
+
             {{ $slotAdmin }}
 
 
@@ -76,7 +79,6 @@
             <script src="{{ asset('static/js/breakpoints.min.js') }}"></script>
             <script src="{{ asset('static/js/util.js') }}"></script>
             <script src="{{ asset('static/js/main.js') }}"></script>
-            <script src="{{ asset('static/js/sideboot.js') }}"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -87,25 +89,15 @@
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
             <!--Librerias propias-->
-            <script src="{{ asset('static/js/jquery.min.js') }}"></script>
             <script src="{{ asset('static/js/popper.js') }}"></script>
             <script src="{{ asset('static/js/bootstrap.min.js') }}"></script>
             <script src="{{ asset('static/js/main.js') }}"></script>
-            <script type="application/javascript">
-                jQuery('input[type=file]').change(function() {
-                    var filename = jQuery(this).val().split('\\').pop();
-                    var idname = jQuery(this).attr('id');
-                    console.log(jQuery(this));
-                    console.log(filename);
-                    console.log(idname);
-                    jQuery('span.' + idname).next().find('span').html(filename);
-                });
-            </script>
+
 
             <script>
-                $(document).on('click', '#exampleModal', function() {
-                    $('#modal-ejemplo').modal('show');
-                })
+                $(document).ready(function() {
+                    $('.toast').toast('show');
+                });
             </script>
 
 

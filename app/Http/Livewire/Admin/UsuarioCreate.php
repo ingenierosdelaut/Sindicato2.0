@@ -36,7 +36,7 @@ class UsuarioCreate extends Component
     public function crearUser()
     {
         $this->validate();
-        $this->usuario->password = Hash::make($this->upassword);
+        $this->usuario->password = Hash::make($this->password = 'sindicatout');
         $this->usuario->is_admin = 0;
         $this->usuario->estado = 1;
         $this->usuario->curp = strtoupper($this->usuario->curp);

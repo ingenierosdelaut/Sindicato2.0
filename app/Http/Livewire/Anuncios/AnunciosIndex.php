@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Anuncios;
 
 use App\Models\Anuncio;
+use App\Models\Usuario;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -23,6 +24,7 @@ class AnunciosIndex extends Component
                 'anuncios.*',
                 'usuarios.nombre'
             )->latest()->paginate(10);
-        return view('livewire.anuncios.anuncios-index', compact('anuncios'))->layout('layouts.app-user')->slot('slotUser');
+        $usuarios = Usuario::all();
+        return view('livewire.anuncios.anuncios-index', compact('anuncios', 'usuarios'))->layout('layouts.app-user')->slot('slotUser');
     }
 }

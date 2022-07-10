@@ -4,9 +4,8 @@
         <link rel="stylesheet" href="{{ asset('static/css/admin-view.css') }}">
     </head>
 
-
         <!-- Page Content  -->
-        <div id="content" class="p-4 p-md-5 pt-5">
+        <div>
             <div class="grid" style="--bs-rows: 3; --bs-columns: 3;">
                 <div class="g-start-2" style="grid-row: 2">
                     <div class="container contenedor">

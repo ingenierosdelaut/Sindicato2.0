@@ -26,6 +26,7 @@ class UsuarioIndex extends Component
             ->orwhere('departamento', 'LIKE', '%' . $this->search . '%')
             ->orwhere('apellido', 'LIKE', '%' . $this->search . '%')
             ->orwhere('estado', 'LIKE', '%' . $this->search . '%')
+            ->orwhere('puesto', 'LIKE', '%' . $this->search . '%')
             ->paginate(10) : [];
         return view('livewire.admin.usuario-index', compact('usuarios'))->layout('layouts.app-admin')->slot('slotAdmin');
     }

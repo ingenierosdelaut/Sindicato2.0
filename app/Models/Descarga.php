@@ -10,6 +10,7 @@ class Descarga extends Model
     use HasFactory;
 
     protected $fillable = [
-        'usuario_id'
+        'usuario_id',
+        'doc_id'
     ];
 }

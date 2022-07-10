@@ -120,7 +120,8 @@
         <div class="row mt-3 g-2">
 
             <div class="col">
-                <input class="relieve" wire:model="password" type="password" placeholder="Contraseña"
+                <label style="color: black" for="">Nueva Contraseña</label>
+                <input  wire:model="password" type="password" placeholder="Contraseña"
                     class="form-control">
                 @error('password')
                     <span class="text-danger">{{ $message }}</span>
@@ -128,7 +129,8 @@
             </div>
 
             <div class="col">
-                <input class="relieve" wire:model="confirm_password" type="password" placeholder="Confirmar Contraseña"
+                <label style="color: black" for="">Confirmar Contraseña</label>
+                <input c wire:model="confirm_password" type="password" placeholder="Confirmar Contraseña"
                     class="form-control">
                 @error('confirm_password')
                     <span class="text-danger">{{ $message }}</span>

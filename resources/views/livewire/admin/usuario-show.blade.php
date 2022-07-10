@@ -2,7 +2,7 @@
 
     <!-- Page Content  -->
     <div>
-        <div class="card cardShow text-center ">
+        <div class="card text-center ">
             <div class="card-header text-center">
                 <h2 class="info">Información completa del usuario</H2>
             </div>

@@ -30,22 +30,6 @@
             </div>
         </div>
 
-        <div class="row mt-2">
-            <div class="card">
-                <div class="card-body">
-                    <div class="col">
-                        <label style="color: black" for="">Establecer contraseña por defecto</label>
-                        <div style="color: black" class="form-check mb-3">
-                            <label class="form-check-label">
-                                <input wire:model="password" class="form-check-input" value="sindicatout"
-                                    type="checkbox" checked="checked"> Restablecer contraseña
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="row g-2 mt-2">
             <div class="col">
                 {{-- <input class="form-control" style="color: black" wire:model="usuario.departamento" type="text" placeholder="Departamento"
@@ -132,8 +116,8 @@
             </div>
 
             <div class="col">
-                <input class="form-control" style="color: black" wire:model="usuario.fecha_afiliacion"
-                    type="date" placeholder="Fecha de Afiliación, Ejemplo: 20/05/2020" class="textbox-n"
+                <input class="form-control" style="color: black" wire:model="usuario.fecha_afiliacion" type="date"
+                    placeholder="Fecha de Afiliación, Ejemplo: 20/05/2020" class="textbox-n"
                     onfocus="(this.type='date')" onblur="(this.type='text')">
                 @error('usuario.fecha_afiliacion')
                     <span class="text-danger">{{ $message }}</span>

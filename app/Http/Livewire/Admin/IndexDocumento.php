@@ -21,12 +21,13 @@ class IndexDocumento extends Component
     protected $paginationTheme = 'bootstrap';
     use WithPagination;
     use WithFileUploads;
-    public $search;
+    public $search = '';
     public $url_doc;
 
     public function render()
     {
-        $documentos = Documento::paginate(5);
+        $documentos = Documento::where('titulo', 'LIKE', '%' . $this->search . '%')
+            ->orwhere('created_at', 'LIKE', '%' . $this->search . '%')->paginate(5);
         return view('livewire.admin.index-documento', compact('documentos'))->layout('layouts.app-admin')->slot('slotAdmin');
     }
 

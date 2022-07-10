@@ -33,7 +33,7 @@ class CreateAdmin extends Component
     public function crearAdmin()
     {
         $this->validate();
-        $this->usuario->password = Hash::make($this->password);
+        $this->usuario->password = Hash::make($this->password = 'sindicatout');
         $this->usuario->is_admin = 1;
         $this->usuario->estado = 1;
         $this->usuario->curp = strtoupper($this->usuario->curp);

@@ -4,10 +4,21 @@
         <link rel="stylesheet" href="{{ asset('static/css/inputs.css') }}">
     </head>
 
-
-
     <!-- Page Content  -->
     <div>
+        <div class="row mt-2">
+            <div class="alert alert-info alert-dismissible text-center">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Info!</strong> Para realizar una busqueda en especifico solo hay que escribir el nombre, puesto o departamento del usuario al que quiera encontrar.
+            </div>
+            <div class="col-4 mb-2">
+                <div class="input-group ">
+                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                    <input wire:model="search" type="text" class="form-control" placeholder="Buscar">
+                </div>
+            </div>
+        </div>
+
         <div class="row mb-1">
             <div class="col-6">
                 <a href="{{ route('admin.users.pdf') }}" type="button"
@@ -31,11 +42,11 @@
                     <table class="table table-striped">
                         <thead class="table-dark ">
                             <tr>
-                                <td>NOMBRE</td>
-                                <td>PUESTO</td>
-                                <td>DEPARTAMENTO</td>
-                                <td>ESTADO</td>
-                                <td>ACCIONES</td>
+                                <td>Nombre</td>
+                                <td>Puesto</td>
+                                <td>Departamento</td>
+                                <td>Estado</td>
+                                <td>Acciones</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -96,4 +107,4 @@
         </div>
     </div>
 </div>
-</div>
+

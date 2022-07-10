@@ -5,7 +5,6 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
-use Livewire\WithFileUploads;
 
 class UsuariosEditPassword extends Component
 {
@@ -15,7 +14,7 @@ class UsuariosEditPassword extends Component
 
     public function render()
     {
-        return view('livewire.admin.usuarios-edit-password')->layout('layouts.app-admin')->slot('slotAdmin');
+        return view('livewire.admin.usuarios-edit-password')->layout('layouts.app-user')->slot('slotUser');
     }
 
     public function editpwd()

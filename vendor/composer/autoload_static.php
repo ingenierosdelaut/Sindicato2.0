@@ -126,6 +126,7 @@ class ComposerStaticInitb04892b001fab9bcf13accb4306af895
             'League\\Flysystem\\' => 17,
             'League\\Config\\' => 14,
             'League\\CommonMark\\' => 18,
+            'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\SerializableClosure\\' => 28,
             'Laravel\\Sanctum\\' => 16,
@@ -134,6 +135,7 @@ class ComposerStaticInitb04892b001fab9bcf13accb4306af895
         'I' => 
         array (
             'Illuminate\\Support\\' => 19,
+            'Illuminate\\Foundation\\Auth\\' => 27,
             'Illuminate\\' => 11,
         ),
         'G' => 
@@ -405,6 +407,10 @@ class ComposerStaticInitb04892b001fab9bcf13accb4306af895
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
         ),
+        'Laravel\\Ui\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/ui/src',
+        ),
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
@@ -425,6 +431,10 @@ class ComposerStaticInitb04892b001fab9bcf13accb4306af895
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
             1 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections',
+        ),
+        'Illuminate\\Foundation\\Auth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/ui/auth-backend',
         ),
         'Illuminate\\' => 
         array (
@@ -553,8 +563,12 @@ class ComposerStaticInitb04892b001fab9bcf13accb4306af895
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Livewire\\Admin\\AdminView' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/AdminView.php',
         'App\\Http\\Livewire\\Admin\\AnuncioCreate' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/AnuncioCreate.php',
+        'App\\Http\\Livewire\\Admin\\AnuncioDelete' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/AnuncioDelete.php',
         'App\\Http\\Livewire\\Admin\\AnuncioEdit' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/AnuncioEdit.php',
         'App\\Http\\Livewire\\Admin\\AnuncioIndex' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/AnuncioIndex.php',
+        'App\\Http\\Livewire\\Admin\\DocumentoUpload' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/DocumentoUpload.php',
+        'App\\Http\\Livewire\\Admin\\IndexDocumento' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/IndexDocumento.php',
+        'App\\Http\\Livewire\\Admin\\ReglaEstado' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/ReglaEstado.php',
         'App\\Http\\Livewire\\Admin\\ReglasAnuncio' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/ReglasAnuncio.php',
         'App\\Http\\Livewire\\Admin\\ReglasUsuario' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/ReglasUsuario.php',
         'App\\Http\\Livewire\\Admin\\Solicitud' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Solicitud.php',
@@ -562,11 +576,21 @@ class ComposerStaticInitb04892b001fab9bcf13accb4306af895
         'App\\Http\\Livewire\\Admin\\UsuarioIndex' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/UsuarioIndex.php',
         'App\\Http\\Livewire\\Admin\\UsuarioShow' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/UsuarioShow.php',
         'App\\Http\\Livewire\\Admin\\UsuariosEdit' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/UsuariosEdit.php',
+        'App\\Http\\Livewire\\Admin\\UsuariosEditPassword' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/UsuariosEditPassword.php',
+        'App\\Http\\Livewire\\Anuncios\\AnunciosIndex' => __DIR__ . '/../..' . '/app/Http/Livewire/Anuncios/AnunciosIndex.php',
         'App\\Http\\Livewire\\Conocenos\\Mision' => __DIR__ . '/../..' . '/app/Http/Livewire/Conocenos/Mision.php',
         'App\\Http\\Livewire\\Conocenos\\Valores' => __DIR__ . '/../..' . '/app/Http/Livewire/Conocenos/Valores.php',
         'App\\Http\\Livewire\\Conocenos\\Vision' => __DIR__ . '/../..' . '/app/Http/Livewire/Conocenos/Vision.php',
+        'App\\Http\\Livewire\\CreateAdmin' => __DIR__ . '/../..' . '/app/Http/Livewire/CreateAdmin.php',
+        'App\\Http\\Livewire\\Documentos\\DocumentosIndex' => __DIR__ . '/../..' . '/app/Http/Livewire/Documentos/DocumentosIndex.php',
         'App\\Http\\Livewire\\Index' => __DIR__ . '/../..' . '/app/Http/Livewire/Index.php',
         'App\\Http\\Livewire\\IniciarSesion\\Login' => __DIR__ . '/../..' . '/app/Http/Livewire/IniciarSesion/Login.php',
+        'App\\Http\\Livewire\\IniciarSesion\\Logout' => __DIR__ . '/../..' . '/app/Http/Livewire/IniciarSesion/Logout.php',
+        'App\\Http\\Livewire\\Requests\\ReglasMotivo' => __DIR__ . '/../..' . '/app/Http/Livewire/Requests/ReglasMotivo.php',
+        'App\\Http\\Livewire\\Requests\\RequestCreate' => __DIR__ . '/../..' . '/app/Http/Livewire/Requests/RequestCreate.php',
+        'App\\Http\\Livewire\\Requests\\RequestEdit' => __DIR__ . '/../..' . '/app/Http/Livewire/Requests/RequestEdit.php',
+        'App\\Http\\Livewire\\Requests\\RulesRequest' => __DIR__ . '/../..' . '/app/Http/Livewire/Requests/RulesRequest.php',
+        'App\\Http\\Middleware\\AdminAuth' => __DIR__ . '/../..' . '/app/Http/Middleware/AdminAuth.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
@@ -2271,8 +2295,16 @@ class ComposerStaticInitb04892b001fab9bcf13accb4306af895
         'Illuminate\\Foundation\\Application' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Application.php',
         'Illuminate\\Foundation\\Auth\\Access\\Authorizable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/Authorizable.php',
         'Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php',
+        'Illuminate\\Foundation\\Auth\\AuthenticatesUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/AuthenticatesUsers.php',
+        'Illuminate\\Foundation\\Auth\\ConfirmsPasswords' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ConfirmsPasswords.php',
         'Illuminate\\Foundation\\Auth\\EmailVerificationRequest' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/EmailVerificationRequest.php',
+        'Illuminate\\Foundation\\Auth\\RedirectsUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/RedirectsUsers.php',
+        'Illuminate\\Foundation\\Auth\\RegistersUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/RegistersUsers.php',
+        'Illuminate\\Foundation\\Auth\\ResetsPasswords' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ResetsPasswords.php',
+        'Illuminate\\Foundation\\Auth\\SendsPasswordResetEmails' => __DIR__ . '/..' . '/laravel/ui/auth-backend/SendsPasswordResetEmails.php',
+        'Illuminate\\Foundation\\Auth\\ThrottlesLogins' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ThrottlesLogins.php',
         'Illuminate\\Foundation\\Auth\\User' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/User.php',
+        'Illuminate\\Foundation\\Auth\\VerifiesEmails' => __DIR__ . '/..' . '/laravel/ui/auth-backend/VerifiesEmails.php',
         'Illuminate\\Foundation\\Bootstrap\\BootProviders' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php',
         'Illuminate\\Foundation\\Bootstrap\\HandleExceptions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php',
         'Illuminate\\Foundation\\Bootstrap\\LoadConfiguration' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php',
@@ -2878,6 +2910,15 @@ class ComposerStaticInitb04892b001fab9bcf13accb4306af895
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
         'Laravel\\Tinker\\TinkerServiceProvider' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerServiceProvider.php',
+        'Laravel\\Ui\\AuthCommand' => __DIR__ . '/..' . '/laravel/ui/src/AuthCommand.php',
+        'Laravel\\Ui\\AuthRouteMethods' => __DIR__ . '/..' . '/laravel/ui/src/AuthRouteMethods.php',
+        'Laravel\\Ui\\ControllersCommand' => __DIR__ . '/..' . '/laravel/ui/src/ControllersCommand.php',
+        'Laravel\\Ui\\Presets\\Bootstrap' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Bootstrap.php',
+        'Laravel\\Ui\\Presets\\Preset' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Preset.php',
+        'Laravel\\Ui\\Presets\\React' => __DIR__ . '/..' . '/laravel/ui/src/Presets/React.php',
+        'Laravel\\Ui\\Presets\\Vue' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Vue.php',
+        'Laravel\\Ui\\UiCommand' => __DIR__ . '/..' . '/laravel/ui/src/UiCommand.php',
+        'Laravel\\Ui\\UiServiceProvider' => __DIR__ . '/..' . '/laravel/ui/src/UiServiceProvider.php',
         'League\\CommonMark\\CommonMarkConverter' => __DIR__ . '/..' . '/league/commonmark/src/CommonMarkConverter.php',
         'League\\CommonMark\\ConverterInterface' => __DIR__ . '/..' . '/league/commonmark/src/ConverterInterface.php',
         'League\\CommonMark\\Delimiter\\Delimiter' => __DIR__ . '/..' . '/league/commonmark/src/Delimiter/Delimiter.php',

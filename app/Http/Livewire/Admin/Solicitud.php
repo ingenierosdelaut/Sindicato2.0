@@ -27,6 +27,7 @@ class Solicitud extends Component
         $requests = Request::join('usuarios', 'id_usuario', '=', 'usuarios.id')
             ->where('nombre', 'LIKE', 'F%' . $this->search . '%')
             ->orwhere('fecha', 'LIKE', '%' . $this->search . '%')
+            ->orwhere('motivo', 'LIKE', '%' . $this->search . '%')
             ->select(
                 'requests.*',
                 'usuarios.nombre',
@@ -39,13 +40,8 @@ class Solicitud extends Component
 
     public function aceptar($id)
     {
-        Request::find($id)->fill(['estado' => 1])->save();
-    }
+        Request::find($id)->fill(['estado' => 1])->save();    }
 
-    // public function denegar($id)
-    // {
-    //     Request::find($id)->fill(['estado' => 2])->save();
-    // }
 
     public function motivo($id)
     {

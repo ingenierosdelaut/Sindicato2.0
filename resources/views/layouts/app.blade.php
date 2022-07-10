@@ -11,10 +11,6 @@
     <link rel="icon" href="{{ asset('static/images/sututslrc.png') }}">
     <link rel="stylesheet" href="{{ asset('static/css/style.css') }}">
 
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
     <!-- JavaScript Bundle with Popper -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
@@ -37,7 +33,7 @@
         <script src="{{ asset('static/js/breakpoints.min.js') }}"></script>
         <script src="{{ asset('static/js/util.js') }}"></script>
         <script src="{{ asset('static/js/main.js') }}"></script>
-        <script src="{{ asset('static/js/sideboot.js') }}"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -48,10 +44,6 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
         <!--Librerias propias-->
-        <script src="{{ asset('static/js/jquery.min.js') }}"></script>
-        <script src="{{ asset('static/js/popper.js') }}"></script>
-        <script src="{{ asset('static/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('static/js/main.js') }}"></script>
     </div>
 
 

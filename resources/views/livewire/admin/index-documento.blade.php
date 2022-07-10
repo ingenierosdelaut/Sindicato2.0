@@ -1,18 +1,20 @@
-<div>
+<div wire:init="cargando">
 
     <head>
-        <link rel="stylesheet" href="{{ asset('static/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('static/css/inputs.css') }}">
-
-
     </head>
-
-
 
     <!-- Page Content  -->
     <div>
         <div class="row">
-            <div class="col mb-1">
+            <div class="col-4 mb-2">
+                <div class="input-group ">
+                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                    <input wire:model="search" type="text" class="form-control" placeholder="Buscar">
+                </div>
+            </div>
+
+            <div class="col mt-2">
                 <div class="float-right">
                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal" data-dismiss="modal"
                         data-bs-target="#Modaldoc" data-backdrop="false" data-bs-whatever="@mdo"><i
@@ -99,7 +101,6 @@
                     </table>
 
                 </div>
-                {{ $cargado == true ? $documentos->links() : null }}
             @else
                 <div class="container text-center">
                     <div class="row">
@@ -111,10 +112,10 @@
                     </div>
                 </div>
         @endif
+
     </div>
+    {{ $cargado == true ? $documentos->links() : null }}
     <!--Modal-->
-
-
     <div wire:ignore.self class="modal" data-backdrop="static" id="Modaldoc" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -127,15 +128,12 @@
                     </div>
                     <div class="modal-body">
                         <form>
-                            <div class="mb-3">
+                            <div>
                                 @include('livewire.admin.documento-upload')
-
                             </div>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success">Enviar</button>
-                    </div>
+
                 </form>
             </div>
         </div>
