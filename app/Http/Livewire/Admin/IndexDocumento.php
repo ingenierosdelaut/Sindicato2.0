@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Documento;
 use App\Models\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -56,6 +57,15 @@ class IndexDocumento extends Component
                 ->with('file', $fileName);
         }
         return view('livewire.admin.documentos-upload');
+    }
+
+    public function generarPDF()
+    {
+        $documentos = Documento::all()
+            ->paginate();
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('livewire.admin.pdfSolicitudes', ['documentos' => $documentos]);
+        return $pdf->stream();
     }
 
     public function updatingSearch()

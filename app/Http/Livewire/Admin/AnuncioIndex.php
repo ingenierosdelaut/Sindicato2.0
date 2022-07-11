@@ -44,7 +44,7 @@ class AnuncioIndex extends Component
                 'usuarios.nombre',
                 'usuarios.apellido'
             )->latest()->paginate(5): [];
-        return view('livewire.admin.anuncio-index', compact('anuncios', 'anuncios'))->layout('layouts.app-admin')->slot('slotAdmin');
+        return view('livewire.admin.anuncio-index', compact('anuncios'))->layout('layouts.app-admin')->slot('slotAdmin');
     }
 
     public function generarPDF()

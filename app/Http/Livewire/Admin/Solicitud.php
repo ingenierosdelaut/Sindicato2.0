@@ -6,6 +6,7 @@ use App\Http\Livewire\Requests\ReglasMotivo;
 use App\Http\Livewire\Requests\RulesRequest;
 use App\Models\Request;
 use App\Models\Usuario;
+use Illuminate\Support\Facades\App;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -49,6 +50,18 @@ class Solicitud extends Component
         Request::find($id)->fill(['estado' => 2,'motivo'=>$this->request['motivo']])->save();
         $this->emit('alert-request-denied', 'Se ha enviando el motivo por el cual se denego solicitud');
 
+    }
+
+    public function generarPDF()
+    {
+        $requests = Request::join('usuarios', 'id_usuario', '=', 'usuarios.id')->select(
+            'requests.*',
+            'usuarios.nombre',
+            'usuarios.apellido'
+        )->paginate();
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('livewire.admin.pdfSolicitudes', ['requests' => $requests]);
+        return $pdf->stream();
     }
 
     public function cargando()

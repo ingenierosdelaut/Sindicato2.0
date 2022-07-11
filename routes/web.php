@@ -27,6 +27,7 @@ use App\Http\Livewire\IniciarSesion\Login;
 use App\Http\Livewire\Requests\RequestCreate;
 use App\Http\Livewire\Requests\RequestDelete;
 use App\Http\Livewire\Requests\RequestEdit;
+use Facade\IgnitionContracts\Solution;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,12 +81,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Admin descargas
     Route::get('/admin/descargas', DescargasIndex::class)->name('admin.descargas')->middleware('auth.admin');
+    Route::get('/admin/descargas/generar-pdf', [DescargasIndex::class, 'generarPDF'])->name('admin.descargas.pdf')->middleware('auth.admin');
 
     //Admin Solicitudes
     Route::get('/admin/solicitudes', Solicitud::class)->name('admin.solicitudes')->middleware('auth.admin');
+    Route::get('/admin/solicitudes/generar-pdf', [Solicitud::class, 'generarPDF'])->name('admin.solicitudes.pdf')->middleware('auth.admin');
+
 
     //requests usuarios
-
     Route::get('/usuario/solicitud', RequestCreate::class)->name('requests.create');
     Route::get('/usuario/solicitud/{request}/delete', RequestEdit::class)->name('requests.delete');
 

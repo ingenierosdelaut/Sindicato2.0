@@ -3,11 +3,17 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Descarga;
+use Illuminate\Support\Facades\App;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 class DescargasIndex extends Component
 {
+    public function mount()
+    {
+        $this->descarga = new Descarga();
+    }
+
     use WithPagination;
     public $search = '';
     public $cargado = false;
@@ -25,6 +31,18 @@ class DescargasIndex extends Component
                 'usuarios.apellido'
             )->orderBy('descargas.created_at', 'asc')->paginate(5);
         return view('livewire.admin.descargas-index', compact('descargas'))->layout('layouts.app-admin')->slot('slotAdmin');
+    }
+
+    public function generarPDF()
+    {
+        $descargas = Descarga::join('usuarios', 'usuario_id', '=', 'usuarios.id')->select(
+            'descargas.*',
+            'usuarios.nombre',
+            'usuarios.apellido'
+        )->paginate();
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('livewire.admin.pdfDescargas', ['descargas' => $descargas]);
+        return $pdf->stream();
     }
 
     public function cargando()

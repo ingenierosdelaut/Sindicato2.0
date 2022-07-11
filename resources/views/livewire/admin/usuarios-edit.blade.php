@@ -2,7 +2,7 @@
 
 
     <!-- Page Content  -->
-    <div id="content" class="p-4 p-md-5 pt-5">
+    <div>
         <form wire:submit.prevent="editar">
             <div class="container">
                 <div class="card">

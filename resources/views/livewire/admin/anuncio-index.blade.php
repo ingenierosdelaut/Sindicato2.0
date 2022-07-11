@@ -5,110 +5,106 @@
     </head>
 
 
+    <div class="row">
+        <div class="col mb-1">
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa fa-search"></i></span>
+                <input wire:model="search" type="text" class="form-control" placeholder="Buscar">
+            </div>
+        </div>
+
+        <div class="col mt-2">
+            <a href="{{ route('admin.anuncio-create') }}" type="button" class="float-right btn-sm btn-success"><i
+                    class="fa fa-plus-square"></i> Crear nuevo anuncio</a>
+
+            <a href="{{ route('admin.anuncio.pdf') }}" type="button"
+                title="Generar documento PDF de todos los anuncios creados" class="mr-1 float-right btn-sm btn-dark"><i
+                    class="fa fa-file-pdf"></i> Generar
+                reporte</a>
+        </div>
+    </div>
+
+
 
     <!-- Page Content  -->
-    <div>
-        <div class="row mt-2">
-            {{-- <div class="alert alert-info alert-dismissible text-center">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Info!</strong> En caso de querer buscar for fecha, se utilizara el mismo formato que
-                aparece en la tabla. Ejemplo: 2022-07-06. Tambien se puede buscar por el dia o mes.
-            </div> --}}
-            <div class="col-4 mb-2">
-                <div class="input-group mt-2">
-                    <span class="input-group-text"><i class="fa fa-search"></i></span>
-                    <input wire:model="search" type="text" class="form-control" placeholder="Buscar">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col mb-1">
-                <div class="float-left">
-                    <a href="{{ route('admin.anuncio.pdf') }}" type="button" class="btn-sm btn-dark"><i
-                            class="fa fa-file-pdf"></i> Generar
-                        reporte</a>
-                </div>
-            </div>
-            <div class="col mb-1">
-                <div class="float-right">
-                    <a href="{{ route('admin.anuncio-create') }}" type="button" class="btn-sm btn-success"><i
-                            class="fa fa-plus-square"></i> Crear nuevo anuncio</a>
-                </div>
-            </div>
-
-        </div>
-
-        @if (count((array) $anuncios))
-            <div class="row">
-                <div class="col text-center">
-                    <table class="table table-striped">
-                        <thead class="table-dark">
+    <div class="row">
+        <div class="col text-center">
+            @if (count((array) $anuncios))
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <td scope="col">Título</td>
+                            <td scope="col">Especificaciones</td>
+                            <td scope="col">Publicado Por</td>
+                            <td scope="col">Día en que se publicó</td>
+                            <td scope="col">Estado</td>
+                            <td scope="col">Acciones</td>
+                        </tr>
+                    </thead>
+                    @foreach ($anuncios as $anuncio)
+                        <tbody>
                             <tr>
-                                <td scope="col">Título</td>
-                                <td scope="col">Especificaciones</td>
-                                <td scope="col">Publicado Por</td>
-                                <td scope="col">Día en que se publicó</td>
-                                <td scope="col">Estado</td>
-                                <td scope="col">Acciones</td>
+                                <td>{{ $anuncio->titulo }}</td>
+                                <td>{{ $anuncio->contenido }}</td>
+                                <td>{{ $anuncio->nombre }} {{ $anuncio->apellido }}</td>
+                                <td>{{ $anuncio->created_at }}</td>
+                                @if ($anuncio->estado == 1)
+                                    <td><span class="badge badge-pill badge-success">Activo</span></td>
+                                @elseif ($anuncio->estado == 0)
+                                    <td><span class="badge badge-pill badge-danger">Inactivo</span></td>
+                                @endif
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                        data-dismiss="modal" title="Eliminar anuncio"
+                                        data-bs-target="#exampleModalAnuncioDel" data-backdrop="false"
+                                        data-bs-whatever="@mdo"><i class="fa fa-trash"></i></button>
+                                    <a href="{{ route('admin.anuncio-edit', $anuncio) }}" title="Editar anuncio"
+                                        type="button" class="btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                    @if ($anuncio->estado == 1)
+                                        <button wire:click="disable({{ $anuncio->id }})" type="button"
+                                            title="Desactivar Anuncio" class="btn btn-sm btn-warning"><i
+                                                class="fa fa-ban"></i>
+                                        </button>
+                                    @elseif ($anuncio->estado == 0)
+                                        <button wire:click="enable({{ $anuncio->id }})" type="button"
+                                            title="Activar Anuncio" class="btn-sm btn btn-success"><i
+                                                class="fa fa-check"></i></button>
+                                    @endif
+                                </td>
                             </tr>
-                        </thead>
-                        @foreach ($anuncios as $anuncio)
+                        </tbody>
+                    @endforeach
+                </table>
+            @else
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <td scope="col">Título</td>
+                                    <td scope="col">Especificaciones</td>
+                                    <td scope="col">Publicado Por</td>
+                                    <td scope="col">Día en que se publicó</td>
+                                    <td scope="col">Estado</td>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
-                                    <td>{{ $anuncio->titulo }}</td>
-                                    <td>{{ $anuncio->contenido }}</td>
-                                    <td>{{ $anuncio->nombre }} {{ $anuncio->apellido }}</td>
-                                    <td>{{ $anuncio->created_at }}</td>
-                                    @if ($anuncio->estado == 1)
-                                        <td><span class="badge badge-pill badge-success">Activo</span></td>
-                                    @elseif ($anuncio->estado == 0)
-                                        <td><span class="badge badge-pill badge-danger">Inactivo</span></td>
-                                    @endif
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                            data-dismiss="modal" title="Eliminar anuncio"
-                                            data-bs-target="#exampleModalAnuncioDel" data-backdrop="false"
-                                            data-bs-whatever="@mdo"><i class="fa fa-trash"></i></button>
-                                        <a href="{{ route('admin.anuncio-edit', $anuncio) }}" title="Editar anuncio"
-                                            type="button" class="btn-sm btn-info"><i class="fa fa-edit"></i></a>
-                                        @if ($anuncio->estado == 1)
-                                            <button wire:click="disable({{ $anuncio->id }})" type="button"
-                                                title="Desactivar Anuncio" class="btn btn-sm btn-warning"><i
-                                                    class="fa fa-ban"></i>
-                                            </button>
-                                        @elseif ($anuncio->estado == 0)
-                                            <button wire:click="enable({{ $anuncio->id }})" type="button"
-                                                title="Activar Anuncio" class="btn-sm btn btn-success"><i
-                                                    class="fa fa-check"></i></button>
-                                        @endif
-                                    </td>
+                                    <td>No hay resultados</td>
+                                    <td>No hay resultados</td>
+                                    <td>No hay resultados</td>
+                                    <td>No hay resultados</td>
+                                    <td>No hay resultados</td>
                                 </tr>
                             </tbody>
-                        @endforeach
-                    </table>
-                @else
-                    <table class="table table-striped">
-                        <thead class="table-dark" style="text-aling-center">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Título</th>
-                                <th scope="col">Especificaciones</th>
-                                <th scope="col">Publicado Por</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <th>No hay resultados</th>
-                            <th>No hay resultados</th>
-                            <th>No hay resultados</th>
-                            <th>No hay resultados</th>
-                            <th>No hay resultados</th>
-                        </tbody>
-                    </table>
-        @endif
-        {{ $cargado == true ? $anuncios->links() : null }}
+                        </table>
+                    </div>
+                </div>
+            @endif
+        </div>
     </div>
+
+    {{ $cargado == true ? $anuncios->links() : null }}
 
     <div wire:ignore.self class="modal" data-backdrop="static" id="exampleModalAnuncioDel" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -146,5 +142,4 @@
             </div>
         </div>
     </div>
-</div>
 </div>

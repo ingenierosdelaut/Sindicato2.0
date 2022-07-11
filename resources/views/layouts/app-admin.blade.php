@@ -31,7 +31,7 @@
                 <div class="user-logo">
                     <img class="img-fluid" src="{{ asset('static/images/sututslrc.png') }}" width="150"
                         height="150" alt="">
-                    <h3><span style="color:#177c67">SUTUT</span><span style="color:grey">SLRC</span></h3>
+                    <h2><span style="color:#177c67">SUTUT</span><span style="color:grey">SLRC</span></h2>
                 </div>
             </div>
             <ul class="list-unstyled components mb-5">
@@ -66,8 +66,6 @@
 
         <div id="content" class="p-4 p-md-5 pt-5">
 
-
-
             {{ $slotAdmin }}
 
 
@@ -94,11 +92,7 @@
             <script src="{{ asset('static/js/main.js') }}"></script>
 
 
-            <script>
-                $(document).ready(function() {
-                    $('.toast').toast('show');
-                });
-            </script>
+
 
 
         </div>

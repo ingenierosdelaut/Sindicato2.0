@@ -8,25 +8,7 @@
 
     <!-- Page Content  -->
     <div>
-        <div wire:ignore class="toast" data-autohide="true">
-            <div class="toast-header">
-                <strong class="mr-auto text-primary">Ayudas</strong>
-                <small class="text-muted">5 mins ago</small>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
-            </div>
-            <div class="toast-body">
-                En caso de querer buscar por fecha, se utilizara el mismo formato que
-                aparece en la tabla. Ejemplo: 2022-07-06. Tambien se puede buscar por el dia o mes.
-            </div>
-        </div>
-
         <div class="row g-2">
-
-            {{-- <div class="alert alert-info alert-dismissible text-center">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Info!</strong> En caso de querer buscar for fecha, se utilizara el mismo formato que
-                aparece en la tabla. Ejemplo: 2022-07-06. Tambien se puede buscar por el dia o mes.
-            </div> --}}
             <div class="col-4 mb-2">
                 <div class="input-group ">
                     <span class="input-group-text"><i class="fa fa-search"></i></span>
@@ -34,7 +16,7 @@
                 </div>
             </div>
             <div class="col mt-2">
-                <a href="{{ route('admin.users.pdf') }}" type="button"
+                <a href="{{ route('admin.solicitudes.pdf') }}" type="button"
                     title="Generar PDF de las solicitudes realizadas" class="float-right btn-sm btn btn-dark"><i
                         class="fa fa-file-pdf"></i> Generar reporte</a>
             </div>

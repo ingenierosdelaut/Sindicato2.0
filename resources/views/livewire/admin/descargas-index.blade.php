@@ -10,6 +10,12 @@
                 <input wire:model="search" type="text" class="form-control" placeholder="Buscar">
             </div>
         </div>
+
+        <div class="col mt-2">
+            <a href="{{ route('admin.descargas.pdf') }}" type="button"
+                title="Genera un documento PDF con todos las descargas realizadas por los usuarios"
+                class="mr-1 float-right btn-sm btn btn-dark"><i class="fa fa-file-pdf"></i> Generar reporte</a>
+        </div>
     </div>
 
     <div class="row">
@@ -18,6 +24,7 @@
                 <table class="table table-striped">
                     <thead class="table-dark ">
                         <tr>
+                            <td>ID</td>
                             <td>Nombre</td>
                             <td>Documento</td>
                             <td>Fecha</td>
@@ -26,6 +33,7 @@
                     <tbody>
                         @foreach ($descargas as $descarga)
                             <tr>
+                                <td>{{ $descarga->id }}</td>
                                 <td>{{ $descarga->nombre }} {{ $descarga->apellido }}</td>
                                 <td>{{ $descarga->titulo }}</td>
                                 <td>{{ $descarga->created_at }}</td>

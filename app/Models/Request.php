@@ -10,7 +10,7 @@ class Request extends Model
     protected $fillable=[
         'estado',
         'fecha',
-        'id_usaurio',
+        'id_usuario',
         'motivo'
     ];
     use HasFactory;
