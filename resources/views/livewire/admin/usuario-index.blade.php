@@ -4,24 +4,37 @@
         <link rel="stylesheet" href="{{ asset('static/css/inputs.css') }}">
     </head>
 
-
-
-    <div class="row ">
-        <div class="col mb-1">
+    <div class="row g-2 mb-2">
+        <div class="col">
             <div class="input-group">
                 <span class="input-group-text"><i class="fa fa-search"></i></span>
                 <input wire:model="search" type="text" class="form-control" placeholder="Buscar">
             </div>
         </div>
 
-        <div class="col-6 mt-2">
-            <a href="{{ route('admin.create-user') }}" type="button" class="float-right btn-sm btn btn-success"><i
-                    class="fa fa-user-plus"></i> Crear nuevo
-                usuario</a>
+        <div class="col mt-2">
+            <div>
+                <a href="{{ route('admin.users.pdf') }}" type="button"
+                    title="Genera un documento PDF con todos los usuarios creados"
+                    class="float-right btn-sm btn btn-dark"><i class="fa fa-file-pdf"></i> Generar reporte
+                </a>
+            </div>
 
-            <a href="{{ route('admin.users.pdf') }}" type="button"
-                title="Genera un documento PDF con todos los usuarios creados"
-                class="mr-1 float-right btn-sm btn btn-dark"><i class="fa fa-file-pdf"></i> Generar reporte</a>
+            <div class="dropdown">
+                <button type="button" style="background-color: #0c8461"
+                    class="float-right mr-1 btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown"><i
+                        class="fa fa-user-plus"></i>
+                    Crear nuevo usuario
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ route('admin.create-user') }}" type="button"> Docente </a>
+                    <a class="dropdown-item" href="{{ route('crear.admin') }}" type="button">
+                        Administrador</a>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
 
@@ -47,7 +60,8 @@
                                 <td>{{ $usuario->puesto }}</td>
                                 <td>{{ $usuario->departamento }}</td>
                                 @if ($usuario->estado == 1)
-                                    <td><span class="badge badge-pill badge-success">Activo</span></td>
+                                    <td><span style="background-color: #0c8461"
+                                            class="badge badge-pill badge-success">Activo</span></td>
                                 @elseif ($usuario->estado == 0)
                                     <td><span class="badge badge-pill badge-danger">Inactivo</span></td>
                                 @endif
@@ -98,4 +112,3 @@
         </div>
     </div>
 </div>
-

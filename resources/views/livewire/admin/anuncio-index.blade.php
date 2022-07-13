@@ -14,8 +14,8 @@
         </div>
 
         <div class="col mt-2">
-            <a href="{{ route('admin.anuncio-create') }}" type="button" class="float-right btn-sm btn-success"><i
-                    class="fa fa-plus-square"></i> Crear nuevo anuncio</a>
+            <a href="{{ route('admin.anuncio-create') }}" style="background-color: #0c8461" type="button"
+                class="float-right btn-sm btn-success"><i class="fa fa-plus-square"></i> Crear nuevo anuncio</a>
 
             <a href="{{ route('admin.anuncio.pdf') }}" type="button"
                 title="Generar documento PDF de todos los anuncios creados" class="mr-1 float-right btn-sm btn-dark"><i
@@ -49,7 +49,8 @@
                                 <td>{{ $anuncio->nombre }} {{ $anuncio->apellido }}</td>
                                 <td>{{ $anuncio->created_at }}</td>
                                 @if ($anuncio->estado == 1)
-                                    <td><span class="badge badge-pill badge-success">Activo</span></td>
+                                    <td><span style="background-color: #0c8461"
+                                            class="badge badge-pill badge-success">Activo</span></td>
                                 @elseif ($anuncio->estado == 0)
                                     <td><span class="badge badge-pill badge-danger">Inactivo</span></td>
                                 @endif

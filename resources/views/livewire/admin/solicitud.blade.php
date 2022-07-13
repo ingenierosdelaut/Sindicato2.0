@@ -32,6 +32,7 @@
                                 <td scope="col">Nombre</td>
                                 <td scope="col">Estado</td>
                                 <td scope="col">Fecha en que se Solicito</td>
+                                <td scope="col">Fecha solicitada</td>
                                 <td scope="col">Motivo</td>
                                 <td scope="col">Acciones</td>
                             </tr>
@@ -47,12 +48,15 @@
                                     @if ($request->estado == 0)
                                         <td><span class="badge badge-pill badge-warning">Pendiente</span></td>
                                     @elseif ($request->estado == 1)
-                                        <td><span class="badge badge-pill badge-success">Aceptada</span></td>
+                                        <td><span style="background-color: #0c8461"
+                                                class="badge badge-pill badge-success">Aceptada</span></td>
                                     @elseif ($request->estado == 2)
                                         <td><span class="badge badge-pill badge-danger">Denegada</span></td>
                                     @endif
-                                    <!--Fecha-->
+                                    <!--Fecha en que se solicito-->
                                     <td>{{ $request->created_at }}</td>
+                                    <!--Fecha solicitada-->
+                                    <td>{{ $request->fecha }}</td>
                                     <!--Motivo-->
                                     @if ($request->motivo != null)
                                         <td>{{ $request->motivo }}</td>
@@ -64,7 +68,8 @@
                                     <!--Acciones-->
                                     @if ($request->estado == 0)
                                         <td>
-                                            <button wire:click="aceptar({{ $request->id }})" type="button"
+                                            <button wire:click="aceptar({{ $request->id }})"
+                                                style="background-color: #0c8461" type="button"
                                                 class="btn btn-sm btn-success">Aceptar</button>
                                             <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
                                                 data-dismiss="modal" data-bs-target="#exampleModal{{ $request->id }}"
@@ -111,8 +116,12 @@
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button wire:click="motivo({{ $request->id }})" type="button"
-                                                        class="btn btn-success">Enviar</button>
+                                                    @if ($request->motivo)
+                                                    @else
+                                                        <button wire:click="motivo({{ $request->id }})"
+                                                            type="button" class="btn btn-success">Enviar</button>
+                                                    @endif
+
                                                 </div>
                                             </form>
                                         </div>

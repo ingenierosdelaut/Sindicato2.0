@@ -43,7 +43,7 @@ class AnuncioIndex extends Component
                 'anuncios.*',
                 'usuarios.nombre',
                 'usuarios.apellido'
-            )->latest()->paginate(5): [];
+            )->latest()->paginate(5) : [];
         return view('livewire.admin.anuncio-index', compact('anuncios'))->layout('layouts.app-admin')->slot('slotAdmin');
     }
 
@@ -61,14 +61,18 @@ class AnuncioIndex extends Component
 
     public function disable($id)
     {
-        $this->emit('alert-anuncio-disabled', 'Has desactivado a este anuncio.');
-        Anuncio::find($id)->fill(['estado' => 0])->save();
+        $anuncio = Anuncio::find($id);
+        $anuncio['estado'] = 0;
+        $anuncio->save();
+        $this->emit('alert-anuncio-disable', 'Has desactivado a este anuncio.');
     }
 
     public function enable($id)
     {
+        $anuncio = Anuncio::find($id);
+        $anuncio['estado'] = 1;
+        $anuncio->save();
         $this->emit('alert-anuncio-enable', 'Has activado a este anuncio.');
-        Anuncio::find($id)->fill(['estado' => 1])->save();
     }
 
     public function delete(Anuncio $anuncio)

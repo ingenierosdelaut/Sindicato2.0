@@ -23,7 +23,10 @@ class Usuario extends Model implements AuthenticatableContract
         'email',
         'password',
         'is_admin',
-        'estado'
+        'estado',
+        'curp',
+        'rfc',
+        'ine'
     ];
 
     /**
@@ -44,6 +47,4 @@ class Usuario extends Model implements AuthenticatableContract
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-
 }

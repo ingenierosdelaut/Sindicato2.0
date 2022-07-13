@@ -34,8 +34,11 @@ class IndexDocumento extends Component
 
     public function desactivar($id)
     {
-        Storage::disk('public')->delete($this->documento->url_doc);
-        Documento::find($id)->fill(['estado' => 0])->save();
+        $documento = Documento::find($id);
+        $documento['estado'] = 0;
+        $documento->save();
+
+        Storage::disk('public')->delete($documento['url_doc']);
         $this->emit('alert-documento-desactivar', 'Has desactivado el documento correctamente');
     }
 
@@ -61,10 +64,9 @@ class IndexDocumento extends Component
 
     public function generarPDF()
     {
-        $documentos = Documento::all()
-            ->paginate();
+        $documentos = Documento::paginate();
         $pdf = App::make('dompdf.wrapper');
-        $pdf->loadView('livewire.admin.pdfSolicitudes', ['documentos' => $documentos]);
+        $pdf->loadView('livewire.admin.pdfDocumentos', ['documentos' => $documentos]);
         return $pdf->stream();
     }
 

@@ -1,5 +1,6 @@
 <div>
-    <div>
+    <br>
+    <div class="mt-5">
         <h3 class="pt-4 pb-2">Formatos</h3>
 
         <div class="row">

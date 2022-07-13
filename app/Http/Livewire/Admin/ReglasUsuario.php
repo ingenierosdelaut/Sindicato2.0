@@ -7,7 +7,7 @@ class ReglasUsuario
 {
     public static function reglas($id = null)
     {
-        $validarpassword = ($id) ? 'nullable|min:8' : 'required|min:8';
+
         return [
             'usuario.nombre' => 'required|string',
             'usuario.apellido' => 'required|string',

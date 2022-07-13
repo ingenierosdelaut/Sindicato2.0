@@ -1,6 +1,6 @@
 <div>
-
-    <div class="mt-2">
+    <br><br>
+    <div class="mt-5">
         <form wire:submit.prevent="crear">
             <div class="card request mx-auto w-50">
                 <h5 class="card-header text-center">
@@ -25,7 +25,6 @@
             <table class="table table-striped text-center">
                 <thead class="table-dark">
                     <tr>
-                        <td scope="col">ID</td>
                         <td scope="col">Fecha Solicitada</td>
                         <td scope="col">Dia en que se solicitó</td>
                         <td scope="col">Estado</td>
@@ -34,12 +33,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @php
-                        $i = 0;
-                    @endphp
                     @foreach ($requests as $request)
                         <tr>
-                            <th scope="row">{{ ++$i }}</th>
                             <td>{{ $request->fecha }}</td>
                             <td>{{ $request->created_at }}</td>
                             @if ($request->estado == 0)
@@ -50,9 +45,11 @@
                             @else
                                 <td><span class="badge badge-pill badge-danger">Denegada</span></td>
                             @endif
-                            <td>
-                                {{ $request->motivo }}
-                            </td>
+                            @if ($request->motivo)
+                                <td>{{ $request->motivo }}</td>
+                            @else
+                                <td>Accioner por realizar</td>
+                            @endif
                             <td>
                                 @if ($request->estado == 0)
                                     <a href="{{ route('requests.delete', $request) }}" title="Eliminar Solicitud"

@@ -10,6 +10,7 @@
 
     <link rel="icon" href="{{ asset('static/images/sututslrc.png') }}">
     <link rel="stylesheet" href="{{ asset('static/css/style.css') }}">
+    <link rel="stylesheet" href="sweetalert2.min.css">
 
     <!-- JavaScript Bundle with Popper -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">

@@ -5,9 +5,9 @@
     </head>
 
     <!-- Page Content  -->
-    <div>
+    <div class="container">
         <form wire:submit.prevent="crearAnuncio">
-            <div class="card">
+            <div class="card ">
                 <div class="card-header">
                     <h5>Para crear un nuevo anuncio solo hay que llenar los siguientes campos.</h5>
                     <p style="color: black">En caso de no querer subir una imagen simplemente se llenan los campos y se

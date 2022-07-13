@@ -10,7 +10,7 @@
 
     <link rel="icon" href="{{ asset('static/images/sututslrc.png') }}">
     <link rel="stylesheet" href="{{ asset('static/css/style.css') }}">
-
+    <link rel="stylesheet" href="sweetalert2.min.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -25,27 +25,29 @@
 
 <body class="landing is-preload">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand text-center" href="{{ route('anuncios.index') }}">
-            <img src="{{ asset('static/images/sututslrc.png') }}" width="50" height="50" alt="logo">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-center" href="{{ route('anuncios.index') }}">
+                <img src="{{ asset('static/images/sututslrc.png') }}" width="50" height="50" alt="logo">
 
-        </a>
+            </a>
 
-        <h6 style="margin: 5px" href="{{ route('anuncios.index') }}"><span style="color:#177c67">SUTUT</span><span
-                style="color:grey">SLRC</span></h6>
+            <h6 style="margin: 5px" href="{{ route('anuncios.index') }}"><span style="color:#177c67">SUTUT</span><span
+                    style="color:grey">SLRC</span></h6>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="">Usuario</a>
-                <a class="nav-item nav-link" href="{{ route('requests.create') }}">Solicitud</a>
-                <a class="nav-item nav-link" href="{{ route('documentos.index') }}">Documentos</a>
-                <div style="margin-left: 975px;">
-                    @livewire('iniciar-sesion.logout')
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="{{ route('usuario.edit-pwd') }}">Perfil</a>
+                    <a class="nav-item nav-link" href="{{ route('requests.create') }}">Solicitud</a>
+                    <a class="nav-item nav-link" href="{{ route('documentos.index') }}">Documentos</a>
+                    <div style="margin-left: 750px;">
+                        @livewire('iniciar-sesion.logout')
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,7 +65,6 @@
         <script src="{{ asset('static/js/breakpoints.min.js') }}"></script>
         <script src="{{ asset('static/js/util.js') }}"></script>
         <script src="{{ asset('static/js/main.js') }}"></script>
-        <script src="{{ asset('static/js/sideboot.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -106,6 +107,15 @@
         livewire.on('alerta-request-create', mensaje => {
             Swal.fire({
                 position: 'top-center',
+                icon: 'success',
+                title: mensaje,
+                showConfirmButton: true,
+            })
+        })
+
+        livewire.on('alert-user-pwd', mensaje => {
+            Swal.fire({
+                position: 'center',
                 icon: 'success',
                 title: mensaje,
                 showConfirmButton: true,

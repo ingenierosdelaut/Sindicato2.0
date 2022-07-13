@@ -12,12 +12,12 @@
                     @if (count((array) $anuncios))
                         <div class="jumbotron">
                             @if ($requests > 0)
-                                <div class="alert alert-info">
+                                <div class="alert alert-dark">
                                     <strong>¡¡Notificación!!</strong> Tienes {{ $requests }} Solicitud(es)
                                     por atender en estado pendiente
                                     <div>
                                         <a href="{{ route('admin.solicitudes') }}"
-                                            class="btn btn-sm btn-info">¿Atender?</a>
+                                            style="background-color: #0c8461" class="btn btn-sm btn-info">¿Atender?</a>
                                     </div>
                                 </div>
                             @endif

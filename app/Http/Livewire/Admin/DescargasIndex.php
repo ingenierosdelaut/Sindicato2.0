@@ -35,8 +35,9 @@ class DescargasIndex extends Component
 
     public function generarPDF()
     {
-        $descargas = Descarga::join('usuarios', 'usuario_id', '=', 'usuarios.id')->select(
+        $descargas = Descarga::join('usuarios', 'usuario_id', '=', 'usuarios.id')->join('documentos', 'doc_id', '=', 'documentos.id')->select(
             'descargas.*',
+            'documentos.*',
             'usuarios.nombre',
             'usuarios.apellido'
         )->paginate();

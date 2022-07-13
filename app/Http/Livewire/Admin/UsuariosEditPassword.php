@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Usuario;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
@@ -14,6 +15,8 @@ class UsuariosEditPassword extends Component
 
     public function render()
     {
+        $idUser = Auth::user()->id;
+        $this->usuario = Usuario::find($idUser);
         return view('livewire.admin.usuarios-edit-password')->layout('layouts.app-user')->slot('slotUser');
     }
 
@@ -23,7 +26,9 @@ class UsuariosEditPassword extends Component
         if ($this->password) {
             $this->usuario->password = Hash::make($this->password);
         }
+        $this->emit('alert-user-pwd', 'Has cambiado tu contraseña correctamente');
         $this->usuario->save();
+        return redirect(route('anuncios.index'));
     }
 
     protected function rules()

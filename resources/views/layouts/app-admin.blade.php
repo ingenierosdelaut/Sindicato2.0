@@ -8,7 +8,7 @@
     <!-- CSS -->
     <link rel="icon" href="{{ asset('static/images/sututslrc.png') }}">
     <link rel="stylesheet" href="{{ asset('static/css/style.css') }}">
-
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <!-- Icono sidebar responsive -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Iconos sidebar -->
@@ -31,12 +31,15 @@
                 <div class="user-logo">
                     <img class="img-fluid" src="{{ asset('static/images/sututslrc.png') }}" width="150"
                         height="150" alt="">
-                    <h2><span style="color:#177c67">SUTUT</span><span style="color:grey">SLRC</span></h2>
+                    <h3><span style="color:#177c67">SUTUT</span><span style="color:grey">SLRC</span></h3>
                 </div>
             </div>
             <ul class="list-unstyled components mb-5">
                 <li class="active">
                     <a href="{{ route('admin.view') }}"><span class="fa fa-home mr-3"></span> Home</a>
+                </li>
+                <li class="active">
+                    <a href="{{ route('admin.edit-info') }}"><span class="fa fa-address-card-o mr-3"></span> Perfil</a>
                 </li>
                 <li>
                     <a href="{{ route('admin.usuarios') }}"><span class="fa fa-users mr-3 notif"></span>Usuarios</a>
@@ -153,10 +156,36 @@
             })
         })
 
+        livewire.on('alert-anuncio-enable', mensaje => {
+            Swal.fire({
+                icon: 'success',
+                position: 'center',
+                title: mensaje,
+                showConfirmButton: true
+            })
+        })
+        livewire.on('alert-anuncio-disable', mensaje => {
+            Swal.fire({
+                icon: 'success',
+                position: 'center',
+                title: mensaje,
+                showConfirmButton: true
+            })
+        })
+
 
         livewire.on('alert-user-disabled', mensaje => {
             Swal.fire({
                 icon: 'warning',
+                position: 'center',
+                title: mensaje,
+                showConfirmButton: true
+            })
+        })
+
+        livewire.on('alert-user-admin-edit', mensaje => {
+            Swal.fire({
+                icon: 'success',
                 position: 'center',
                 title: mensaje,
                 showConfirmButton: true

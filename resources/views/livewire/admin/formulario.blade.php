@@ -1,4 +1,4 @@
-<div class="container contenedor">
+<div class="container">
 
     <form class="form">
         <div class="row g-2">

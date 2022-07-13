@@ -16,10 +16,10 @@
 
             <div class="col mt-2">
 
-                <button type="button" class="float-right btn btn-sm btn-success" data-bs-toggle="modal" data-dismiss="modal"
-                    data-bs-target="#Modaldoc" data-backdrop="false" data-bs-whatever="@mdo"><i
-                        class="fa fa-plus-square"></i> Subir Nuevo Documento</button>
-                <a href="{{ route('admin.solicitudes.pdf') }}" type="button"
+                <button type="button" class="float-right btn btn-sm btn-success" style="background-color: #0c8461"
+                    data-bs-toggle="modal" data-dismiss="modal" data-bs-target="#Modaldoc" data-backdrop="false"
+                    data-bs-whatever="@mdo"><i class="fa fa-plus-square"></i> Subir Nuevo Documento</button>
+                <a href="{{ route('admin.documentos.pdf') }}" type="button"
                     title="Generar PDF de las solicitudes realizadas" class="mr-1 float-right btn-sm btn btn-dark"><i
                         class="fa fa-file-pdf"></i> Generar reporte</a>
 
@@ -45,7 +45,8 @@
                                     <td>{{ $documento->titulo }}</td>
                                     <td>{{ $documento->created_at }}</td>
                                     @if ($documento->estado == 1)
-                                        <td><span class="badge badge-pill badge-success">Activo</span></td>
+                                        <td><span style="background-color: #0c8461"
+                                                class="badge badge-pill badge-success">Activo</span></td>
                                     @else
                                         <td><span class="badge badge-pill badge-danger">Inactivo</span></td>
                                     @endif
@@ -125,7 +126,7 @@
             <div class="modal-content text-center">
                 <form action="{{ route('fileUpload') }}" method="post" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">¿Deseas eliminar este anuncio?</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Subir documento</h5>
                         <button type="button" class="btn-sm btn-close" data-bs-dismiss="modal"
                             aria-label="Close">&times;</button>
                     </div>
