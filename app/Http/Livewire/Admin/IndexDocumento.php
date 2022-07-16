@@ -42,7 +42,6 @@ class IndexDocumento extends Component
         $this->emit('alert-documento-desactivar', 'Has desactivado el documento correctamente');
     }
 
-
     public function fileUpload(Request $req)
     {
         $req->validate([

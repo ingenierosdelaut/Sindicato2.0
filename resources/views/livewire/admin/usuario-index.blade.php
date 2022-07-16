@@ -46,11 +46,11 @@
                 <table class="table table-striped">
                     <thead class="table-dark ">
                         <tr>
-                            <td>Nombre</td>
-                            <td>Puesto</td>
-                            <td>Departamento</td>
-                            <td>Estado</td>
-                            <td>Acciones</td>
+                            <th>Nombre</th>
+                            <th>Puesto</th>
+                            <th>Departamento</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>

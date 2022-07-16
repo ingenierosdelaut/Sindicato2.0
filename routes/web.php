@@ -60,7 +60,7 @@ Route::get('/admin/crear-nuevos-admin', CreateAdmin::class)->name('crear.admin')
 
 Route::group(['middleware' => 'auth'], function () {
     //Admin
-    Route::get('/admin', AdminView::class)->name('admin.view')->middleware('auth.admin');
+    Route::get('/admin/home', AdminView::class)->name('admin.view')->middleware('auth.admin');
     Route::get('/admin/usuarios', UsuarioIndex::class)->name('admin.usuarios')->middleware('auth.admin');
     Route::get('/admin/usuarios/crear-usuario', UsuarioCreate::class)->name('admin.create-user')->middleware('auth.admin');
     Route::get('/admin/usuarios/{usuario}/editar-usuario', UsuariosEdit::class)->name('admin.user-edit')->middleware('auth.admin');

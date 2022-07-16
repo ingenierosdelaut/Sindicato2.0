@@ -38,7 +38,7 @@
                 <li class="active">
                     <a href="{{ route('admin.view') }}"><span class="fa fa-home mr-3"></span> Home</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="{{ route('admin.edit-info') }}"><span class="fa fa-address-card-o mr-3"></span> Perfil</a>
                 </li>
                 <li>
@@ -67,7 +67,7 @@
         </nav>
 
 
-        <div id="content" class="p-4 p-md-5 pt-5">
+        <div id="content" class="container-fluid p-4 p-md-5 pt-5">
 
             {{ $slotAdmin }}
 

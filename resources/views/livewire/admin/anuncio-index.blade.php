@@ -33,12 +33,12 @@
                 <table class="table table-striped">
                     <thead class="table-dark">
                         <tr>
-                            <td scope="col">Título</td>
-                            <td scope="col">Especificaciones</td>
-                            <td scope="col">Publicado Por</td>
-                            <td scope="col">Día en que se publicó</td>
-                            <td scope="col">Estado</td>
-                            <td scope="col">Acciones</td>
+                            <th scope="col">Título</th>
+                            <th scope="col">Especificaciones</th>
+                            <th scope="col">Publicado Por</th>
+                            <th scope="col">Día en que se publicó</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     @foreach ($anuncios as $anuncio)

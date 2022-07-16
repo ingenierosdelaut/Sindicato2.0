@@ -24,10 +24,10 @@
                 <table class="table table-striped">
                     <thead class="table-dark ">
                         <tr>
-                            <td>ID</td>
-                            <td>Nombre</td>
-                            <td>Documento</td>
-                            <td>Fecha</td>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Documento</th>
+                            <th>Fecha</th>
                         </tr>
                     </thead>
                     <tbody>

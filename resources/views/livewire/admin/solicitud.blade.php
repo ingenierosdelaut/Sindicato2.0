@@ -29,12 +29,12 @@
                         <thead class="table-dark">
                             <tr>
                                 {{-- <td scope="col">#ID</td> --}}
-                                <td scope="col">Nombre</td>
-                                <td scope="col">Estado</td>
-                                <td scope="col">Fecha en que se Solicito</td>
-                                <td scope="col">Fecha solicitada</td>
-                                <td scope="col">Motivo</td>
-                                <td scope="col">Acciones</td>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Fecha en que se Solicito</th>
+                                <th scope="col">Fecha solicitada</th>
+                                <th scope="col">Motivo</th>
+                                <th scope="col">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>

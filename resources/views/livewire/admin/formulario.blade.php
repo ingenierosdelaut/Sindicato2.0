@@ -3,7 +3,7 @@
     <form class="form">
         <div class="row g-2">
             <div class="col">
-                <input class="form-control" type="text" style="color: black" wire:model="usuario.nombre"
+                <input class="form-control" type="text" wire:model="usuario.nombre"
                     placeholder="Nombre">
                 @error('usuario.nombre')
                     <span class="text-danger">{{ $message }}</span>
@@ -11,7 +11,7 @@
             </div>
 
             <div class="col">
-                <input class="form-control" style="color: black" wire:model="usuario.apellido" placeholder="Apellido"
+                <input class="form-control"  wire:model="usuario.apellido" placeholder="Apellido"
                     type="text">
                 @error('usuario.apellido')
                     <span class="text-danger">{{ $message }}</span>
@@ -22,7 +22,7 @@
 
         <div class="row mt-2">
             <div class="col-6">
-                <input class="form-control" style="color: black" wire:model="usuario.email"
+                <input class="form-control"  wire:model="usuario.email"
                     placeholder="Ejemplo@hotmail.com" type="text" placeholder="Correo: ejemplo@hotmail.com">
                 @error('usuario.email')
                     <span class="text-danger">{{ $message }}</span>
@@ -32,9 +32,9 @@
 
         <div class="row g-2 mt-2">
             <div class="col">
-                {{-- <input class="form-control" style="color: black" wire:model="usuario.departamento" type="text" placeholder="Departamento"
+                {{-- <input class="form-control"  wire:model="usuario.departamento" type="text" placeholder="Departamento"
                     > --}}
-                <select style="color: black" class="relieve-options" wire:model="usuario.departamento"
+                <select  class="relieve-options" wire:model="usuario.departamento"
                     name="departamento">
                     <option>Departamento</option>
                     <option value="Tecnologias de la Información">Tecnologias de la infomación</option>
@@ -50,9 +50,9 @@
             </div>
 
             <div class="col">
-                {{-- <input class="form-control" style="color: black" wire:model="usuario.puesto" type="text" placeholder="Puesto"
+                {{-- <input class="form-control"  wire:model="usuario.puesto" type="text" placeholder="Puesto"
                     > --}}
-                <select style="color: black" class="relieve-options" wire:model="usuario.puesto" name="puesto"
+                <select  class="relieve-options" wire:model="usuario.puesto" name="puesto"
                     aria-placeholder="Elegir">
                     <option>Puesto</option>
                     <option value="Administrativo">Administrativo</option>
@@ -74,7 +74,7 @@
 
         <div class="row g-3 mt-2">
             <div class="col">
-                <input class="form-control" style="color: black" wire:model="usuario.telefono" type="text"
+                <input class="form-control"  wire:model="usuario.telefono" type="text"
                     placeholder="Teléfono, Ejemplo: 6531506589">
                 @error('usuario.telefono')
                     <span class="text-danger">{{ $message }}</span>
@@ -107,7 +107,7 @@
             </div>
 
             <div class="col">
-                <input class="form-control" style="color: black" wire:model="usuario.fecha_ingreso" type="date"
+                <input class="form-control"  wire:model="usuario.fecha_ingreso" type="date"
                     class="textbox-n" onblur="(this.type='text')" onfocus="(this.type='date')"
                     placeholder=" Fecha de Ingreso Ejemplo: 05/05/2020" id="date">
                 @error('usuario.fecha_ingreso')
@@ -116,7 +116,7 @@
             </div>
 
             <div class="col">
-                <input class="form-control" style="color: black" wire:model="usuario.fecha_afiliacion" type="date"
+                <input class="form-control"  wire:model="usuario.fecha_afiliacion" type="date"
                     placeholder="Fecha de Afiliación, Ejemplo: 20/05/2020" class="textbox-n"
                     onfocus="(this.type='date')" onblur="(this.type='text')">
                 @error('usuario.fecha_afiliacion')

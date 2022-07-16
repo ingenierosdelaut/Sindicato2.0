@@ -34,6 +34,7 @@ class AdminEdit extends Component
         $this->usuario->ine = strtoupper($this->usuario->ine);
         $this->usuario->save();
         $this->emit('alert-user-admin-edit', 'Se ha modificado correctamente al administrador');
+        return redirect(route('admin.view'));
     }
 
     protected function rules()

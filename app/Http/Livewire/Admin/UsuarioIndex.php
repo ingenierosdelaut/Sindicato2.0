@@ -33,10 +33,13 @@ class UsuarioIndex extends Component
 
     public function generarPDF()
     {
+        $createdby = Usuario::find([
+            'nombre' => auth()->user()->id
+        ]);
         $usuarios = Usuario::all();
         $pdf = App::make('dompdf.wrapper');
-        $pdf->loadView('livewire.admin.pdfUsers', ['usuarios' => $usuarios]);
-        return $pdf->stream();
+        $pdf->loadView('livewire.admin.pdfUsers', ['usuarios' => $usuarios, 'createdby' => $createdby]);
+        return $pdf->setPaper('a4', 'landscape')->stream();
     }
 
     public function cargando()

@@ -32,10 +32,10 @@
                     <table class="table table-striped">
                         <thead class="table-dark">
                             <tr>
-                                <td scope="col">Título </td>
-                                <td scope="col">Se subio</td>
-                                <td scope="col">Estado</td>
-                                <td scope="col">Acciones</td>
+                                <th scope="col">Título </th>
+                                <th scope="col">Se subio</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Acciones</th>
                             </tr>
                         </thead>
 
