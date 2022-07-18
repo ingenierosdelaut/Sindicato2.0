@@ -8,11 +8,12 @@ body {
 }
 
 header {
-    position: fixed;
+    position: absolute;
     top: 0cm;
     left: 0cm;
     right: 0cm;
-    height: 1.5cm;
+    height: 2cm;
+    margin-bottom: 50px;
     background-color: black;
     color: white;
     text-align: center;
@@ -29,7 +30,7 @@ footer {
     bottom: 0cm;
     left: 0cm;
     right: 0cm;
-    height: 1.5cm;
+    height: 0.5cm;
     background-color: black;
     color: white;
     text-align: center;
@@ -54,8 +55,8 @@ td {
 }
 
 tr:nth-child(even) {
-    background-color: #1e4740;
-    color: white;
+    background-color: #ddd;
+    color: black;
 }
 
 thead {
@@ -65,5 +66,6 @@ thead {
 }
 
 .createdby {
+    margin-top: 150px;
     text-align: right;
 }

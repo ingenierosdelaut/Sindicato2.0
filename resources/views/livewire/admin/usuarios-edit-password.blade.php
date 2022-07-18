@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-footer text-center">
                     <button type="submit" style="background-color: #0c8461"
-                        class="btn btn-success btn-sm">Guardar</button>
+                        class="w-50 btn btn-success">Guardar</button>
                 </div>
             </div>
         </form>

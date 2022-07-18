@@ -15,13 +15,12 @@
             </div>
 
             <div class="col mt-2">
-
-                <button type="button" class="float-right btn btn-sm btn-success" style="background-color: #0c8461"
+                <a href="{{ route('admin.documentos.pdf') }}" type="button"
+                    title="Generar PDF de las solicitudes realizadas" class="float-right btn-sm btn btn-dark"><i
+                        class="fa fa-file-pdf"></i> Generar reporte</a>
+                <button type="button" class="mr-1 float-right btn btn-sm btn-success" style="background-color: #0c8461"
                     data-bs-toggle="modal" data-dismiss="modal" data-bs-target="#Modaldoc" data-backdrop="false"
                     data-bs-whatever="@mdo"><i class="fa fa-plus-square"></i> Subir Nuevo Documento</button>
-                <a href="{{ route('admin.documentos.pdf') }}" type="button"
-                    title="Generar PDF de las solicitudes realizadas" class="mr-1 float-right btn-sm btn btn-dark"><i
-                        class="fa fa-file-pdf"></i> Generar reporte</a>
 
             </div>
         </div>

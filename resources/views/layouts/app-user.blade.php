@@ -32,8 +32,8 @@
 
             </a>
 
-            <h6 style="margin: 5px" href="{{ route('anuncios.index') }}"><span style="color:#177c67">SUTUT</span><span
-                    style="color:grey">SLRC</span></h6>
+            {{-- <h6 style="margin: 5px" href="{{ route('anuncios.index') }}"><span style="color:#177c67">SUTUT</span><span
+                    style="color:grey">SLRC</span></h6> --}}
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +45,7 @@
                     <a class="nav-item nav-link" href="{{ route('usuario.edit-pwd') }}">Perfil</a>
                     <a class="nav-item nav-link" href="{{ route('requests.create') }}">Solicitud</a>
                     <a class="nav-item nav-link" href="{{ route('documentos.index') }}">Documentos</a>
-                    <div style="margin-left: 750px;">
+                    <div style="margin-left: 870px;">
                         @livewire('iniciar-sesion.logout')
                     </div>
                 </div>
@@ -79,6 +79,7 @@
         <script src="{{ asset('static/js/popper.js') }}"></script>
         <script src="{{ asset('static/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('static/js/main.js') }}"></script>
+        <script src="{{ asset('static/js/sidebar.js') }}"></script>
         <script type="application/javascript">
             jQuery('input[type=file]').change(function() {
                 var filename = jQuery(this).val().split('\\').pop();

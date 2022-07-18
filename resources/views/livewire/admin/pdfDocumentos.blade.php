@@ -17,7 +17,7 @@
 
         <div class="container">
             {{-- <img src="{{ asset('static/images/sututslrc.png') }}" width="150" height="150" alt=""> --}}
-            <h2>Lista de Documentos descargados</h2>
+            <h2>Reporte de Documentos descargados</h2>
         </div>
 
 

@@ -8,17 +8,18 @@
     <header>
         {{-- <h1><span style="color:#177c67">SUTUT</span><span style="color:grey">SLRC</span></h1> --}}
         <h1><span style="color: grey;">SUTUTSLRC</span></h1>
-        {{-- <img class="img-fluid" src="{{ asset('static/images/sututslrc.png') }}" width="150" height="150"
-            alt=""> --}}
+
     </header>
 
     <main>
         <div class="createdby">
+            {{-- <img class="img-fluid" src="{{ asset('static/images/sututslrc.png') }}" width="150" height="150"
+            alt=""> --}}
             <p>El documento fue creado por: <b> </b> el dia: </p>
         </div>
 
         <div class="container">
-            <h2>Lista de usuarios registrados</h2>
+            <h2>Reporte de usuarios registrados</h2>
         </div>
 
         <table class="table text-center table-striped">

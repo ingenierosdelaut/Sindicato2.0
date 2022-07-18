@@ -14,13 +14,12 @@
         </div>
 
         <div class="col mt-2">
-            <a href="{{ route('admin.anuncio-create') }}" style="background-color: #0c8461" type="button"
-                class="float-right btn-sm btn-success"><i class="fa fa-plus-square"></i> Crear nuevo anuncio</a>
-
             <a href="{{ route('admin.anuncio.pdf') }}" type="button"
-                title="Generar documento PDF de todos los anuncios creados" class="mr-1 float-right btn-sm btn-dark"><i
+                title="Generar documento PDF de todos los anuncios creados" class="float-right btn-sm btn-dark"><i
                     class="fa fa-file-pdf"></i> Generar
                 reporte</a>
+            <a href="{{ route('admin.anuncio-create') }}" style="background-color: #0c8461" type="button"
+                class="mr-1 float-right btn-sm btn-success"><i class="fa fa-plus-square"></i> Crear nuevo anuncio</a>
         </div>
     </div>
 

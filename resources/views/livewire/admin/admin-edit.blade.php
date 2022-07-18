@@ -14,8 +14,8 @@
                     @include('livewire.admin.formulario-admin')
                 </div>
                 <div class="card-footer">
-                    <button type="submit" style="background-color: #177c67" class="w-25 float-right btn btn-success">Guardar</button>
-                    <a class="w-25 btn btn-dark" href="{{route('admin.anuncios')}}">Regresar</a>
+                    <button type="submit" style="background-color: #177c67" class="float-right btn btn-success">Guardar</button>
+                    <a class="btn btn-dark" href="{{route('admin.anuncios')}}">Regresar</a>
                 </div>
             </div>
         </form>

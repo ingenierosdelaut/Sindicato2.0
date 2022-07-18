@@ -67,7 +67,7 @@
         </nav>
 
 
-        <div id="content" class="container-fluid p-4 p-md-5 pt-5">
+        <div id="content" class="container-fluid mt-2 p-5 p-md-5 pt-5">
 
             {{ $slotAdmin }}
 
@@ -80,6 +80,7 @@
             <script src="{{ asset('static/js/breakpoints.min.js') }}"></script>
             <script src="{{ asset('static/js/util.js') }}"></script>
             <script src="{{ asset('static/js/main.js') }}"></script>
+            <script src="{{ asset('static/js/sidebar.js') }}"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
